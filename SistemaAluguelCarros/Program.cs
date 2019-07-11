@@ -15,13 +15,19 @@ namespace SistemaAluguelCarros
 
             var opcaoMenu = MenuPrincipal();
 
-            while (opcaoMenu != 3)  //enquanto o usuário não digitar 3 sempre volta pro menu
+            while (opcaoMenu != 4)  //enquanto o usuário não digitar 3 sempre volta pro menu
             {
                 if (opcaoMenu == 1)
                     AlugarUmCarro(); //LocarUmLivro
 
                 if (opcaoMenu == 2)
                     DevolverCarro(); //DesalocarUmLivro
+
+                if (opcaoMenu == 3)
+                {
+                    MostrarListaDeCarros();
+                    Console.ReadKey();
+                }
 
                 opcaoMenu = MenuPrincipal();
             }
@@ -52,7 +58,8 @@ namespace SistemaAluguelCarros
             Console.WriteLine("O que você deseja realizar?");
             Console.WriteLine("1 - Alugar um carro.");
             Console.WriteLine("2 - Devolver um carro.");
-            Console.WriteLine("3 - Sair do sistema");
+            Console.WriteLine("3 - Ver lista de carros");
+            Console.WriteLine("4 - Sair do sistema");
             Console.WriteLine("Digite o número desejado:");
 
             //var  opcao = Console.ReadKey().KeyChar.ToString();  //KeyChar é uma representação, um código na memória. ToString traduz o KeyChar para String.
@@ -67,7 +74,7 @@ namespace SistemaAluguelCarros
         /// </summary>
         public static void BaseDeDados()
         {
-            baseDeCarros = new string[2, 3]
+            baseDeCarros = new string[2, 3]  //matriz com duas linhas e 3 colunas
             {
                 {"Fusca","1979","não"}, {"Jeta","2018","sim"}
             };
@@ -83,7 +90,6 @@ namespace SistemaAluguelCarros
             Console.WriteLine("1 - Sim");
             Console.WriteLine("0 - Não");
             Console.WriteLine("Digite o número desejado:");
-
             
             int.TryParse(Console.ReadKey().KeyChar.ToString(), out int opcao); 
 
@@ -96,8 +102,7 @@ namespace SistemaAluguelCarros
         /// <param name="modeloDoCarro"></param>
         /// <returns></returns>
         public static bool PesquisaCarros(string modeloDoCarro)
-        {
-            
+        {            
 
             for (int i = 0; i < baseDeCarros.GetLength(0); i++)
             {
@@ -117,6 +122,7 @@ namespace SistemaAluguelCarros
 
             MostrarMenuInicialCarros("Alugar um carro:");
 
+           
             var modeloDoCarro = Console.ReadLine();
             if (PesquisaCarros(modeloDoCarro))
             {
@@ -160,7 +166,7 @@ namespace SistemaAluguelCarros
             MostrarListaDeCarros();
 
             var modeloDoCarro = Console.ReadLine();
-            if (!PesquisaCarros(modeloDoCarro))
+            if (!PesquisaCarros(modeloDoCarro)) 
             {
                 Console.Clear();
                 SejaBemVindo();
@@ -182,7 +188,6 @@ namespace SistemaAluguelCarros
             MostrarMenuInicialCarros("Devolver um carro");
 
             MostrarListaDeCarros();
-
 
             var modeloDoCarro = Console.ReadLine();
             if (PesquisaCarros(modeloDoCarro))
