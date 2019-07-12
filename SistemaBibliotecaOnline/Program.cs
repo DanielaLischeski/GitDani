@@ -88,7 +88,7 @@ namespace SistemaBibliotecaOnline
             {
                 if (CompararNomes(nomeLivro, baseDeLivros[i, 0]))
                 //(nomeLivro.ToLower().Replace(" ","") == baseDeLivros[i, 0].ToLower().Replace(" ","")) //0 primeira coluna  
-                {   //ToLower substitur tudo para minúsculo  /Replace substitui um por outro
+                {   //ToLower substitur tudo para minúsculo  /Replace substitui um por outro.
                     Console.WriteLine($"O livro: {nomeLivro} " + $" pode ser alocado?: {baseDeLivros[i, 1]}"); //1 segunda coluna
 
                     return baseDeLivros[i, 1] == "sim"; //se a baseDeLivros for sim, armazena o valor e poderá alocar o livro. Quando acha o livro já retorna, pois não precisa passar por todos os livros
@@ -98,7 +98,7 @@ namespace SistemaBibliotecaOnline
             Console.WriteLine("Nenhum livro encontrado. Deseja realizar a busca novamente?");
             Console.WriteLine("Digite o número da opção desejada: sim(1) não(0)");
 
-            int.TryParse(Console.ReadKey().KeyChar.ToString(), out int opcao);
+            int.TryParse(Console.ReadKey().KeyChar.ToString(), out int opcao); 
                         
             if(opcao == 1)
             {
