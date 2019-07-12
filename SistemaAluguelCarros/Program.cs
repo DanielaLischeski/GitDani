@@ -101,7 +101,7 @@ namespace SistemaAluguelCarros
         /// </summary>
         /// <param name="modeloDoCarro"></param>
         /// <returns></returns>
-        public static bool? PesquisaCarros(string modeloDoCarro)
+        public static bool? PesquisaCarros(ref string modeloDoCarro)
         {            
 
             for (int i = 0; i < baseDeCarros.GetLength(0); i++)
@@ -109,6 +109,7 @@ namespace SistemaAluguelCarros
                 if (CompararNomes(modeloDoCarro, baseDeCarros[i, 0])) //0 primeira coluna
                 {
                     Console.WriteLine($"\r\nO carro: {modeloDoCarro} " + $" - Ano {baseDeCarros[i,1]}" + $" pode ser alugado?: {baseDeCarros[i, 2]}"); 
+
 
                     return baseDeCarros[i, 2] == "sim"; 
                 }
@@ -124,7 +125,7 @@ namespace SistemaAluguelCarros
                 Console.WriteLine("\r\nDigite o nome do carro a ser pesquisado:");
                 modeloDoCarro = Console.ReadLine();
 
-                return PesquisaCarros(modeloDoCarro);
+                return PesquisaCarros(ref modeloDoCarro);
             }
 
             return null; 
@@ -137,7 +138,7 @@ namespace SistemaAluguelCarros
 
            
             var modeloDoCarro = Console.ReadLine();
-            var resultadoPesquisa = PesquisaCarros(modeloDoCarro);
+            var resultadoPesquisa = PesquisaCarros(ref modeloDoCarro);
 
             if (resultadoPesquisa != null && resultadoPesquisa == true)
             {
@@ -187,7 +188,7 @@ namespace SistemaAluguelCarros
             MostrarListaDeCarros();
 
             var modeloDoCarro = Console.ReadLine();
-            var resultadoPesquisa = PesquisaCarros(modeloDoCarro);
+            var resultadoPesquisa = PesquisaCarros(ref modeloDoCarro);
 
             if (resultadoPesquisa != null && resultadoPesquisa == false)
             {

@@ -82,13 +82,13 @@ namespace SistemaBibliotecaOnline
         /// </summary>
         /// <param name="nomeLivro">Nome do livro a ser pesquisado</param>
         /// <returns>Retorna verdadeiro caso o livro estiver livre para alocação.</returns>
-        public static bool? PesquisaLivroParaAlocacao(string nomeLivro)  //definiu nomeLivro, porque ainda não havia sido referenciada
+        public static bool? PesquisaLivroParaAlocacao(ref string nomeLivro)  //definiu nomeLivro, porque ainda não havia sido referenciada
         {
             for (int i = 0; i < baseDeLivros.GetLength(0); i++)
             {
                 if (CompararNomes(nomeLivro, baseDeLivros[i, 0]))
                 //(nomeLivro.ToLower().Replace(" ","") == baseDeLivros[i, 0].ToLower().Replace(" ","")) //0 primeira coluna  
-                {   //ToLower substitur tudo para minúsculo  /Replace substitui um por outro.
+                {   //ToLower substitur tudo para minúsculo  /Replace substitui um por outro
                     Console.WriteLine($"O livro: {nomeLivro} " + $" pode ser alocado?: {baseDeLivros[i, 1]}"); //1 segunda coluna
 
                     return baseDeLivros[i, 1] == "sim"; //se a baseDeLivros for sim, armazena o valor e poderá alocar o livro. Quando acha o livro já retorna, pois não precisa passar por todos os livros
@@ -105,7 +105,7 @@ namespace SistemaBibliotecaOnline
                 Console.WriteLine("Digite o nome do livro a ser pesquisado:");
                 nomeLivro = Console.ReadLine();
 
-                return PesquisaLivroParaAlocacao(nomeLivro);
+                return PesquisaLivroParaAlocacao(ref nomeLivro);
             }
 
             return null; //se passa pla rotina anterior e não encontra o livro, retorna falso, pois não tem como alocar.
@@ -140,7 +140,7 @@ namespace SistemaBibliotecaOnline
             MostrarMenuInicialLivros("Alocar um livro:");
 
             var nomedolivro = Console.ReadLine();
-            var resultadoPesquisa = PesquisaLivroParaAlocacao(nomedolivro);
+            var resultadoPesquisa = PesquisaLivroParaAlocacao(ref nomedolivro);
 
             if (resultadoPesquisa != null && resultadoPesquisa == true)
             {
@@ -181,7 +181,7 @@ namespace SistemaBibliotecaOnline
             MostrarListaDeLivros();
 
             var nomedolivro = Console.ReadLine();
-            var resultadoPesquisa = PesquisaLivroParaAlocacao(nomedolivro);
+            var resultadoPesquisa = PesquisaLivroParaAlocacao(ref nomedolivro);
 
             if (resultadoPesquisa != null && resultadoPesquisa == false)
             {
