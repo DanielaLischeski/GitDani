@@ -17,10 +17,8 @@ namespace Exercicio1
             Console.WriteLine("<><>                                          <><>");
             Console.WriteLine("<><><><><><><><><><><><><><><><><><><><><><><><><>\r\n");
 
-            Console.WriteLine("Então digite seu nome:");
-            string nome = Console.ReadLine();
-
-            //int.TryParse(Console.ReadLine(),)
+            Console.WriteLine("Então digite seu nome:"); 
+            string nome = Console.ReadLine();                      
 
             Console.WriteLine("\r\nE agora digite sua idade:");
 
