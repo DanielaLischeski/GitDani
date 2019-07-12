@@ -101,12 +101,12 @@ namespace SistemaAluguelCarros
         /// </summary>
         /// <param name="modeloDoCarro"></param>
         /// <returns></returns>
-        public static bool PesquisaCarros(string modeloDoCarro)
+        public static bool? PesquisaCarros(string modeloDoCarro)
         {            
 
             for (int i = 0; i < baseDeCarros.GetLength(0); i++)
             {
-                if (modeloDoCarro == baseDeCarros[i, 0]) //0 primeira coluna
+                if (CompararNomes(modeloDoCarro, baseDeCarros[i, 0])) //0 primeira coluna
                 {
                     Console.WriteLine($"\r\nO carro: {modeloDoCarro} " + $" - Ano {baseDeCarros[i,1]}" + $" pode ser alugado?: {baseDeCarros[i, 2]}"); 
 
@@ -114,7 +114,20 @@ namespace SistemaAluguelCarros
                 }
             }
 
-            return false; 
+            Console.WriteLine("\r\nNenhum carro encontrado. Deseja realizar a busca novamente?");
+            Console.WriteLine("Digite o número da opção desejada: sim(1) não(0)");        
+
+            int.TryParse(Console.ReadKey().KeyChar.ToString(), out int opcao);
+
+            if (opcao == 1)
+            {
+                Console.WriteLine("\r\nDigite o nome do carro a ser pesquisado:");
+                modeloDoCarro = Console.ReadLine();
+
+                return PesquisaCarros(modeloDoCarro);
+            }
+
+            return null; 
         }
 
         public static void AlugarUmCarro()
@@ -124,7 +137,9 @@ namespace SistemaAluguelCarros
 
            
             var modeloDoCarro = Console.ReadLine();
-            if (PesquisaCarros(modeloDoCarro))
+            var resultadoPesquisa = PesquisaCarros(modeloDoCarro);
+
+            if (resultadoPesquisa != null && resultadoPesquisa == true)
             {
                 Console.Clear();
                 SejaBemVindo();
@@ -136,6 +151,12 @@ namespace SistemaAluguelCarros
 
                 Console.ReadKey();
 
+            }
+
+
+            if (resultadoPesquisa == null)
+            {
+                Console.WriteLine("Nenhum carro encontrado em nossa base de dados do sistema.");
             }
         }
 
@@ -166,7 +187,9 @@ namespace SistemaAluguelCarros
             MostrarListaDeCarros();
 
             var modeloDoCarro = Console.ReadLine();
-            if (!PesquisaCarros(modeloDoCarro)) 
+            var resultadoPesquisa = PesquisaCarros(modeloDoCarro);
+
+            if (resultadoPesquisa != null && resultadoPesquisa == false)
             {
                 Console.Clear();
                 SejaBemVindo();
@@ -180,29 +203,11 @@ namespace SistemaAluguelCarros
 
             }
 
-        }
-
-        public static void MenuEscolhaCarro()
-        {
-
-            MostrarMenuInicialCarros("Devolver um carro");
-
-            MostrarListaDeCarros();
-
-            var modeloDoCarro = Console.ReadLine();
-            if (PesquisaCarros(modeloDoCarro))
-            {              
-                Console.Clear();
-                SejaBemVindo();
-                Console.WriteLine("Você deseja devolver um carro? Para sim (1) para não (0)");
-
-                AtualizarCarro(modeloDoCarro, Console.ReadKey().KeyChar.ToString() == "0");
-
-                MostrarListaDeCarros();
-
-                Console.ReadKey();
-
+            if (resultadoPesquisa == null)
+            {
+                Console.WriteLine("Nenhum carro encontrado em nossa base de dados do sistema.");
             }
+
         }
                      
         public static void MostrarMenuInicialCarros(string operacao)
@@ -213,6 +218,15 @@ namespace SistemaAluguelCarros
 
             Console.WriteLine($"Menu - {operacao}");
             Console.WriteLine("Digite o modelo do carro para realizar a operação:");
+        }
+
+        public static bool CompararNomes(string primeiro, string segundo)
+        {
+            if (primeiro.ToLower().Replace(" ", "")
+                == segundo.ToLower().Replace(" ", ""))
+                return true;
+
+            return false;
         }
     }
 }
