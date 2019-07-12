@@ -91,7 +91,7 @@ namespace SistemaAluguelCarros
             Console.WriteLine("0 - Não");
             Console.WriteLine("Digite o número desejado:");
             
-            int.TryParse(Console.ReadKey().KeyChar.ToString(), out int opcao); 
+            int.TryParse(Console.ReadKey().KeyChar.ToString(), out int opcao);  
 
             return opcao;
         }
