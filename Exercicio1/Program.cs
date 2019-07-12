@@ -24,7 +24,7 @@ namespace Exercicio1
 
             int.TryParse(Console.ReadLine(), out int idade);
 
-            if(idade >= 18)
+            if(idade > 18)
             {
                 Console.WriteLine($"\r\nOba! {nome} você possui {idade} anos e é maior de idade, pode consumir bedida alcoólica! Mas se beber não dirija!");
             }
