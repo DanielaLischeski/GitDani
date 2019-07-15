@@ -44,11 +44,8 @@ namespace ExercicioCriacaoLista2
                 var cor = Console.ReadLine();
 
                 listaDeCarro[i, 0] = (IdParaLista++).ToString();
-
                 listaDeCarro[i, 1] = modelo;
-
                 listaDeCarro[i, 2] = ano;
-
                 listaDeCarro[i, 3] = cor;
 
                 Console.WriteLine("\r\nDeseja inserir um novo registro? sim(1) ou não(0)");
@@ -80,7 +77,6 @@ namespace ExercicioCriacaoLista2
                 if (ListaDeCarro[i, 0] == null)
                     limiteDaLista = false;
             }
-
 
             if (limiteDaLista)
             {
