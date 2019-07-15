@@ -61,12 +61,12 @@ namespace ExercicioCriacaoLista2
                 AumentaTamanhoLista(ref listaDeCarro);
             }
 
-            Console.WriteLine("Registro adicionados com sucesso, segue lista de informações adicionadas:");
+            Console.WriteLine("\r\nRegistro adicionados com sucesso, segue lista de informações adicionadas:");
 
 
             for (int i = 0; i < listaDeCarro.GetLength(0); i++)
 
-                Console.WriteLine(string.Format("Registro ID {0} - Nome: {1} - Ano: {2} - Cor: {3}", listaDeCarro[i, 0], listaDeCarro[i, 1], listaDeCarro[i, 2], listaDeCarro[i, 3]));
+                Console.WriteLine(string.Format("    Registro ID {0} - Nome: {1} - Ano: {2} - Cor: {3}", listaDeCarro[i, 0], listaDeCarro[i, 1], listaDeCarro[i, 2], listaDeCarro[i, 3]));
         }
 
         public static void AumentaTamanhoLista(ref string[,] ListaDeCarro)
@@ -84,7 +84,6 @@ namespace ExercicioCriacaoLista2
 
             if (limiteDaLista)
             {
-
                 var listaCopia = ListaDeCarro;
 
                 ListaDeCarro = new string[ListaDeCarro.GetLength(0) + 2, 4];
@@ -101,8 +100,10 @@ namespace ExercicioCriacaoLista2
                 }
 
                 Console.WriteLine("\r\nO tamanho da lista foi atualizado.");
+              
             }
+                      
+        }        
 
-        }
     }
 }
