@@ -101,7 +101,7 @@ namespace ProjetoFinalConsole
         }
 
         /// <summary>
-        /// Mostra as informações dentro da nossa lista de dados "base de dados"
+        /// Mostra as informações dentro da nossa lista de dados "base de livros"
         /// </summary>
         /// <param name="baseDeLivros">base de dados para a leitura e mostrar pro usuário</param>
         /// <param name="mostrarRegistrosNAtivos">Quando identificado com o valor true, o mesmo mostra os valores que não estão ativos dentro do sistema</param>
