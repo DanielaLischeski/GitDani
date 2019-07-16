@@ -56,7 +56,7 @@ namespace ProjetoFinalConsole
             Console.WriteLine(" 3 - Listar informações.");
             Console.WriteLine(" 4 - Sair do sistema.");
 
-            Console.WriteLine(" Digite o número da opção desejada:");
+            Console.WriteLine("\r\n Digite o número da opção desejada:");
 
             return Console.ReadLine();
         }
