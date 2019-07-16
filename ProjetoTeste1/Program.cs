@@ -146,7 +146,7 @@ namespace ProjetoTeste1
                         $" - Nome do autor: {baseDeLivros[i, 2]}");
             }
 
-            Console.WriteLine("\r\nInforme o ID do registro a se removido:");
+            Console.WriteLine("\r\n Informe o ID do registro a se removido:");
             var id = Console.ReadLine();
 
             for (int i = 0; i < baseDeLivros.GetLength(0); i++)
@@ -185,6 +185,7 @@ namespace ProjetoTeste1
                 var listaCopia = baseDeLivros; //faz uma cópia da base de livros  para mostrar ao usuário após apagar os registros.
 
                 baseDeLivros = new string[baseDeLivros.GetLength(0) + 2, 5];
+
 
                 for (int i = 0; i < listaCopia.GetLength(0); i++)
                 {
