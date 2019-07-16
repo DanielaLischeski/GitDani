@@ -38,8 +38,8 @@ namespace InsertAndRemoveInList
                     //4 - Sai do nosso sistema
                     case "5":
                         {
-                            //Return dentro do nosso caso de escolha ele sai do nosso metodo principal ou
-                            //método que estamos dentro de contexto
+                            //Return dentro do nosso caso de escolha ele sai do nosso método principal ou
+                            //método que estamos dentro de contexto, neste caso Main
                             return;
                         }
 
@@ -193,7 +193,7 @@ namespace InsertAndRemoveInList
         }
 
         /// <summary>
-        /// Método que aumenta as informações disponíveis para cadastro dentro da nossa lista        ///
+        /// Método que aumenta as informações disponíveis para cadastro dentro da nossa lista///
         /// </summary>
         /// <param name="baseDeDados">Retorna nossa base de dados</param>
         public static void AumentaTamanhoLista(ref string[,] baseDeDados)
