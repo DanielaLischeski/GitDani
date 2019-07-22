@@ -39,7 +39,7 @@ select
 		inner join TurmaAlunos tr on d.Turma=tr.Turma
 		--inner join Turmas t on tr.Turma=t.Id	
 		--inner join Alunos a on tr.Aluno=a.Id
-		left join Presenca p on d.Id=p.Diario and tr.Aluno=p.Aluno
+		left join Presenca p on d.Id=p.Diario and tr.Aluno=p.Aluno  --left join vai trazer a informação mesmo que esteja NULL
 		left join Notas n on tr.Aluno=n.Aluno and d.Id=n.Diario
 group by d.[Data],n.Nota
 
