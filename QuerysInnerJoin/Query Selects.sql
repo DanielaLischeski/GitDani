@@ -175,8 +175,8 @@ select
 	M.Nome as 'Marcas',
 	SUM(V.Quantidade) as 'Quantidade de vendas'
 from Marcas M
-inner join Carros C on M.Id=C.Marca
-inner join Vendas V on C.Id=V.Carro
+inner join Carros C on C.Marca=M.Id
+inner join Vendas V on V.Carro=C.Id
 group by M.Nome
 order by SUM(V.Quantidade) desc;
 
@@ -185,8 +185,8 @@ select
 	M.Nome as 'Marcas',
 	SUM(V.Quantidade * V.Valor) as 'Valor de vendas'
 from Marcas M
-inner join Carros C on M.Id=C.Marca
-inner join Vendas V on C.Id=V.Carro
+inner join Carros C on C.Marca=M.Id
+inner join Vendas V on V.Carro=C.Id
 group by M.Nome
 order by SUM(V.Quantidade * V.Valor) desc;
 
