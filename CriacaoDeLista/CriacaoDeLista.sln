@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.29020.237
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CriacaoDeLista", "CriacaoDeLista.csproj", "{3CEB71BA-8DC0-4796-ABAC-05F9AED5568C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsandoNossaBlibliotecaDeLista", "..\UsandoNossaBlibliotecaDeLista\UsandoNossaBlibliotecaDeLista.csproj", "{ADF4B9F8-9450-45D1-9FF0-AD02AD571CAB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{3CEB71BA-8DC0-4796-ABAC-05F9AED5568C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3CEB71BA-8DC0-4796-ABAC-05F9AED5568C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3CEB71BA-8DC0-4796-ABAC-05F9AED5568C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADF4B9F8-9450-45D1-9FF0-AD02AD571CAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADF4B9F8-9450-45D1-9FF0-AD02AD571CAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADF4B9F8-9450-45D1-9FF0-AD02AD571CAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADF4B9F8-9450-45D1-9FF0-AD02AD571CAB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

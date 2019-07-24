@@ -3,21 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CriacaoDeLista.Organizando.Lista;
 
-namespace CriacaoDeLista
+namespace BibliotecaCalculadora
 {
     class Program
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Digite um valor para a");
+            var operacoes = new Adicao();
 
-            Listas l = new Listas();
-            l.Carregalista();
-            l.listar();
-
-            l.LimparLista();
-            l.listar();
+            Console.ReadKey();
 
         }
     }
