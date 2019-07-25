@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BoletimEscolar.Clases
 {
-    public class CalculaMedia
+    public class CalculaNotaFrequencia
     {
         
         public int CalculoDeMedia(int nota1, int nota2, int nota3)
@@ -25,6 +25,14 @@ namespace BoletimEscolar.Clases
                 Console.WriteLine($"Aluno apovado com média {media} e frequêcia {frequencia}%");
             else
                 Console.WriteLine($"Aluno reprovado com média {media} e frequência {frequencia}%");
+        }
+
+        public string retornaSituacaoAluno(int media, int frequencia)
+        {
+            if ((media >= 7) && (frequencia >= 75))
+                return "Aprovado";
+            else
+                return "Reprovado";
         }
     }
 }

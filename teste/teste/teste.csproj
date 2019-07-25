@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A9FFC198-B867-40E6-9F67-D7B3182173CA}</ProjectGuid>
+    <ProjectGuid>{1E3E82C2-9B97-46EE-B1D0-9222DFE11266}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>BoletimEscolar</RootNamespace>
-    <AssemblyName>BoletimEscolar</AssemblyName>
+    <RootNamespace>teste</RootNamespace>
+    <AssemblyName>teste</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,8 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\CalculaNotaFrequencia.cs" />
-    <Compile Include="Classes\Listagens.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
