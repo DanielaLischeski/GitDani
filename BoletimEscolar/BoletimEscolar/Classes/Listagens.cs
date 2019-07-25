@@ -122,35 +122,6 @@ namespace BoletimEscolar.Classes
             }
         }
 
-        // public void AlterarRegistro(int pId)
-        // {
-        //     Cabecalho();
-        //
-        //     Console.WriteLine("\r\nInforme o Id do aluno para alterar uma informação: ");
-        //     var capturaNome = Console.ReadLine();
-        //
-        //     for (int i = 0; i < arrayAluno.GetLength(0); i++)
-        //     {
-        //
-        //         if (arrayAluno[i, 0] == pId.ToString())
-        //         {
-        //             var media = boletim.CalculoDeMedia(nota1, nota2, nota3);
-        //             arrayAluno[i, 2] = media.ToString(); 
-        //             arrayAluno[i, 3] = "";
-        //             arrayAluno[i, 4] = "";
-        //
-        //             Console.WriteLine("Deseja remover o registro? sim(s) ou não (n)");
-        //             var continuar = Console.ReadLine().ToString().ToLower();
-        //
-        //             if (continuar == "s")
-        //                 break;
-        //         }
-        //
-        //     }
-        //
-        //
-        // }
-        //
         public void Cabecalho()
         {
             
@@ -164,6 +135,7 @@ namespace BoletimEscolar.Classes
 
         public int Menu()
         {
+            //Console.Clear();
             Cabecalho();
 
             Console.WriteLine($"Menu principal ---- o que você deseja fazer?" +
