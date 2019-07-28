@@ -8,7 +8,7 @@ namespace BoletimEscolarMelhorado.Classes
 {
     public class MostraInformacoes
     {
-        Aluno[] alunos = new Aluno[2];
+        Aluno[] alunos = new Aluno[5];
         int id = 0;
 
         public void Informacoes()
@@ -61,27 +61,27 @@ namespace BoletimEscolarMelhorado.Classes
         public Aluno RegistraInformacoes(Aluno informacoes)
         {
             Console.WriteLine("Informe o nome do aluno");
-            informacoes.nome = Console.ReadLine();
+            informacoes.Nome = Console.ReadLine();
 
             Console.WriteLine("Informe a nota 1:");
             int.TryParse(Console.ReadLine(), out int notaInserida1);
-            informacoes.nota1 = notaInserida1;
+            informacoes.Nota1 = notaInserida1;
 
             Console.WriteLine("Informe a nota 2:");
             int.TryParse(Console.ReadLine(), out int notaInserida2);
-            informacoes.nota2 = notaInserida2;
+            informacoes.Nota2 = notaInserida2;
 
             Console.WriteLine("Informe a nota 3:");
             int.TryParse(Console.ReadLine(), out int notaInserida3);
-            informacoes.nota3 = notaInserida3;
+            informacoes.Nota3 = notaInserida3;
 
             Console.WriteLine("Informe o número de aulas:");
             int.TryParse(Console.ReadLine(), out int totalAulasInserida);
-            informacoes.totalAulas = totalAulasInserida;
+            informacoes.TotalAulas = totalAulasInserida;
 
             Console.WriteLine("Informe o número de faltas:");
             int.TryParse(Console.ReadLine(), out int totalFaltasInserida);
-            informacoes.totalFaltas = totalFaltasInserida;
+            informacoes.TotalFaltas = totalFaltasInserida;
 
             return informacoes;
         }
@@ -90,13 +90,13 @@ namespace BoletimEscolarMelhorado.Classes
         {
             for (int i = 0; i < alunos.GetLength(0); i++)
             {
-                if(alunos[i].id < 0)
+                if(alunos[i].Id < 0)
                 {
                     Aluno informacoesAluno = new Aluno();
 
                     informacoesAluno = RegistraInformacoes(informacoesAluno);
 
-                    informacoesAluno.id = id;
+                    informacoesAluno.Id = id;
                     id++;
 
                     alunos[i] = informacoesAluno;
@@ -115,10 +115,10 @@ namespace BoletimEscolarMelhorado.Classes
 
             for (int i = 0; i < alunos.GetLength(0); i++)
             {
-                if (alunos[i].id >= 0)
+                if (alunos[i].Id >= 0)
                 {
-                    Console.WriteLine($"Id..........: {alunos[i].id}");
-                    Console.WriteLine($"Aluno.......: {alunos[i].nome}");
+                    Console.WriteLine($"Id..........: {alunos[i].Id}");
+                    Console.WriteLine($"Aluno.......: {alunos[i].Nome}");
                     Console.WriteLine($"Média.......: {alunos[i].CalcularMedia()}");
                     Console.WriteLine($"Frequência..: {alunos[i].CalcularFrequencia()}%");
                     Console.WriteLine($"Situação....: {alunos[i].SituacaoAluno()}\n");
@@ -135,7 +135,7 @@ namespace BoletimEscolarMelhorado.Classes
 
             for (int i = 0; i < alunos.GetLength(0); i++)
             {
-                if(alunos[i].id == idBusca)
+                if(alunos[i].Id == idBusca)
                 {
                     alunos[i] = RegistraInformacoes(alunos[i]);
                 }
@@ -149,7 +149,7 @@ namespace BoletimEscolarMelhorado.Classes
 
             for (int i = 0; i < alunos.GetLength(0); i++)
             {
-                if (alunos[i].id == idBusca)
+                if (alunos[i].Id == idBusca)
                 {
                     alunos[i] = new Aluno();
                 }
