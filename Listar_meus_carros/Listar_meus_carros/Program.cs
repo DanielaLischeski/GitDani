@@ -25,14 +25,12 @@ namespace Listar_meus_carros
                 }
 
                 opcaoMenu = MostraMenu();
-
-                //Console.ReadKey();
             }
         }
         public static void AdicionarCarros(List<Carros> listaCarros)
         {
 
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 1; i++)
             {
                 listaCarros.Add(new Carros()
                 {
@@ -44,8 +42,6 @@ namespace Listar_meus_carros
             }
 
             ListarCarros(listaCarros);
-
-            MostraMenu();
 
         }
 
