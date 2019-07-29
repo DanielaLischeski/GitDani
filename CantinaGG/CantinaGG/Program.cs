@@ -10,7 +10,7 @@ namespace CantinaGG
     class Program
     {
         static void Main(string[] args)
-        {
+        {/*/*/
             Carteira lanche = new Carteira(20);
 
             while (lanche.Saldo > 0)

@@ -22,10 +22,12 @@ namespace Cantina.Classes
         {
             return saldo;
         }
-              
+             
 
         public double MenuLanches()
         {
+            Console.Clear();
+
             Console.WriteLine($"-------Menu Lanches--------" +
                 $"\r\n 1 - Coxinha...............R$3,00" +
                 $"\r\n 2 - Pastel de queijo......R$2,50" +
@@ -41,6 +43,7 @@ namespace Cantina.Classes
                 case "3": { return 5.00; }
             }
             return 0.00;
+
         }
 
         public bool Comprar()

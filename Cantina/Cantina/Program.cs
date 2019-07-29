@@ -11,16 +11,19 @@ namespace Cantina
     {
         static void Main(string[] args)
         {
-            Carteira carteiraAluno = new Carteira();             
-                             
-            if (carteiraAluno.Comprar())
-                Console.WriteLine("Compra realizada com sucesso!");
-            else
-                Console.WriteLine("Compra não realizada");
+            Carteira carteiraAluno = new Carteira();
 
-            Console.WriteLine($"Saldo atual disponível:{carteiraAluno.Saldo.ToString("N2")}"); //N2 mostra 2 casas após a vírgula
+            while (carteiraAluno.Saldo > 0)
+            {
+                if (carteiraAluno.Comprar())
+                    Console.WriteLine("Compra realizada com sucesso!");
+                else
+                    Console.WriteLine("Compra não realizada, saldo insuficiente.");
 
-            Console.ReadKey();
+                Console.WriteLine($"Saldo atual disponível: {carteiraAluno.Saldo.ToString("N2")}"); //N2 mostra 2 casas após a vírgula
+
+                Console.ReadKey();
+            }
         }
     }
 }
