@@ -25,6 +25,9 @@ namespace CadastroDeAlunos
             TabelaDeCadastro formCad = new TabelaDeCadastro();
             formCad.ShowDialog();
             alunos.Add(formCad.novoAluno);
+
+            dataGridView1.DataSource = null; 
+            dataGridView1.DataSource = alunos;
         }
     }
 }

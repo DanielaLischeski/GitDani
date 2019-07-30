@@ -25,7 +25,15 @@ namespace CadastroDeLanches
             TelaDeCadastro formCad = new TelaDeCadastro();
             formCad.ShowDialog();
             lanches.Add(formCad.novoLanche);
+
+            dataGridView1.DataSource = null; //semelhante ao refresh (que não está funcinando)
+            dataGridView1.DataSource = lanches;
+     
         }
-        
+
+        private void DataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
