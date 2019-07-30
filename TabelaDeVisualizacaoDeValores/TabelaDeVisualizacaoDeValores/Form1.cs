@@ -29,7 +29,13 @@ namespace TabelaDeVisualizacaoDeValores
                 Value = new Random().Next(100),
                 DatInc = DateTime.Now
             });
-                      
+
+            BindList();
+         
+        }
+
+        private void BindList()
+        {
             var newList = new List<Contrac>();//é criada uma nova lista para não alterar a lista original
 
             foreach (Contrac item in listContracs)
@@ -38,13 +44,12 @@ namespace TabelaDeVisualizacaoDeValores
                     Id = item.Id,
                     Value = item.Value,
                     DatInc = item.DatInc
-                }); 
-           
+                });
+
 
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = newList;
         }
-
         private void DataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex > -1)
@@ -70,8 +75,8 @@ namespace TabelaDeVisualizacaoDeValores
                     case 2: {
                             if (MessageBox.Show("Deseja realmente ajustar este valor?"
                              , "Edição"
-                             , MessageBoxButtons.YesNo
-                             , MessageBoxIcon.Question) == DialogResult.Yes)
+                             , MessageBoxButtons.YesNoCancel
+                             , MessageBoxIcon.Error) == DialogResult.Yes)
                             {
                                 var dataInformada = DateTime.Parse(collValue.Value.ToString());
 
@@ -80,6 +85,9 @@ namespace TabelaDeVisualizacaoDeValores
                                     x.Id == (int)collumId.Value).DatInc = DateTime.Parse(collValue.Value.ToString());
                                 else
                                     MessageBox.Show("Não foi possível alterar o registro de data.");
+                            } else if (DialogResult == DialogResult.No)
+                            {
+                                //TODO: Codigo para quando o mesmo não realizar a operação corretamente
                             }
                         } break;
                 }
