@@ -1,4 +1,4 @@
-﻿namespace CadastroDeAlunos
+﻿namespace CadastroDeCarros
 {
     partial class Form1
     {
@@ -33,9 +33,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(35, 47);
+            this.button1.Location = new System.Drawing.Point(25, 30);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(217, 66);
+            this.button1.Size = new System.Drawing.Size(157, 56);
             this.button1.TabIndex = 0;
             this.button1.Text = "CADASTRAR";
             this.button1.UseVisualStyleBackColor = true;

@@ -1,4 +1,4 @@
-﻿using CadastroDeAlunos.Classes;
+﻿using CadastroDeCarros.Classes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,22 +9,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CadastroDeAlunos
+namespace CadastroDeCarros
 {
-    public partial class Form1 : Form
+    public partial class TelaDeCadastro : Form
     {
-        public Form1()
+        public TelaDeCadastro()
         {
             InitializeComponent();
         }
 
-        public List<Aluno> alunos = new List<Aluno>();
+        public Carro novoCarro = new Carro();
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            TabelaDeCadastro formCad = new TabelaDeCadastro();
-            formCad.ShowDialog();
-            alunos.Add(formCad.novoAluno);
+            novoCarro.Modelo = txbModelo.Text;
+            novoCarro.Ano = (int)nrAno.Value;
+            novoCarro.Placa = txbPlaca.Text;
+
+            this.Close();
         }
     }
 }
