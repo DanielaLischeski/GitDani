@@ -51,12 +51,12 @@ namespace TabelaDeVisualizacaoDeValores
             dataGridView1.DataSource = newList;
         }
         private void DataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-        {
+        { //validação
             if (e.RowIndex > -1)
             {
                 var collumId = dataGridView1.Rows[e.RowIndex].Cells[0];
                 var collValue = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex];
-
+                
                 switch (collValue.ColumnIndex)
                 {
                     case 0: {//Caso que representa minha coluna ID

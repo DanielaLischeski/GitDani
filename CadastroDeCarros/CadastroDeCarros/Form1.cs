@@ -41,6 +41,7 @@ namespace CadastroDeCarros
             dataGridView1.DataSource = newList;
         }
 
+        //validacao
         private void DataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex > -1)
