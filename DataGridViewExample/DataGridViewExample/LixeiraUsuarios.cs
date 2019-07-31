@@ -10,22 +10,17 @@ using System.Windows.Forms;
 
 namespace DataGridViewExample
 {
-    public partial class Form3 : Form
+    public partial class LixeiraUsuarios : Form
     {
-        public Form3()
+        public LixeiraUsuarios()
         {
             InitializeComponent();
         }
 
-        private void Form3_Load(object sender, EventArgs e)
+        private void LixeiraUsuarios_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'querysInnerJoinDataSet1.Usuarios' table. You can move, or remove it, as needed.
-            this.usuariosTableAdapter.CustomQuery(this.querysInnerJoinDataSet1.Usuarios);
-
-        }
-
-        private void Button2_Click(object sender, EventArgs e)
-        {
+            this.usuariosTableAdapter.SelectInativos(this.querysInnerJoinDataSet1.Usuarios);
 
         }
 
@@ -39,17 +34,12 @@ namespace DataGridViewExample
             {
                 case 0:
                     {
-                        this.usuariosTableAdapter.DeleteQuery(usuariosSelect.Id);
+                        this.usuariosTableAdapter.Restaurar(usuariosSelect.Id);
                     }
                     break;
             }
-            this.usuariosTableAdapter.CustomQuery(this.querysInnerJoinDataSet1.Usuarios);
-        }
+            this.usuariosTableAdapter.SelectInativos(this.querysInnerJoinDataSet1.Usuarios);
 
-        private void Button2_Click_1(object sender, EventArgs e)
-        {
-            LixeiraUsuarios lixo = new LixeiraUsuarios();
-            lixo.ShowDialog();
         }
     }
 }

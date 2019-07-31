@@ -1,6 +1,6 @@
 ﻿namespace DataGridViewExample
 {
-    partial class Form5
+    partial class LixeiraUsuarios
     {
         /// <summary>
         /// Required designer variable.
@@ -30,23 +30,19 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.vendasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.querysInnerJoinDataSet1 = new DataGridViewExample.QuerysInnerJoinDataSet1();
-            this.button1 = new System.Windows.Forms.Button();
-            this.vendasTableAdapter = new DataGridViewExample.QuerysInnerJoinDataSet1TableAdapters.VendasTableAdapter();
-            this.button2 = new System.Windows.Forms.Button();
-            this.Delet = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.usuariosTableAdapter = new DataGridViewExample.QuerysInnerJoinDataSet1TableAdapters.UsuariosTableAdapter();
+            this.RestaurarCommand = new System.Windows.Forms.DataGridViewButtonColumn();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.carroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantidadeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ativoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.usuIncDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usuAltDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datIncDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datAltDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vendasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.querysInnerJoinDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,69 +53,46 @@
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Delet,
+            this.RestaurarCommand,
             this.idDataGridViewTextBoxColumn,
-            this.carroDataGridViewTextBoxColumn,
-            this.quantidadeDataGridViewTextBoxColumn,
-            this.valorDataGridViewTextBoxColumn,
+            this.usuarioDataGridViewTextBoxColumn,
             this.ativoDataGridViewCheckBoxColumn,
             this.usuIncDataGridViewTextBoxColumn,
             this.usuAltDataGridViewTextBoxColumn,
             this.datIncDataGridViewTextBoxColumn,
             this.datAltDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.vendasBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 143);
+            this.dataGridView1.DataSource = this.usuariosBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(776, 292);
+            this.dataGridView1.Size = new System.Drawing.Size(784, 429);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
             // 
-            // vendasBindingSource
+            // usuariosBindingSource
             // 
-            this.vendasBindingSource.DataMember = "Vendas";
-            this.vendasBindingSource.DataSource = this.querysInnerJoinDataSet1;
+            this.usuariosBindingSource.DataMember = "Usuarios";
+            this.usuariosBindingSource.DataSource = this.querysInnerJoinDataSet1;
             // 
             // querysInnerJoinDataSet1
             // 
             this.querysInnerJoinDataSet1.DataSetName = "QuerysInnerJoinDataSet1";
             this.querysInnerJoinDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // button1
+            // usuariosTableAdapter
             // 
-            this.button1.Location = new System.Drawing.Point(12, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(373, 125);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Adicionar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.usuariosTableAdapter.ClearBeforeFill = true;
             // 
-            // vendasTableAdapter
+            // RestaurarCommand
             // 
-            this.vendasTableAdapter.ClearBeforeFill = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(391, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(397, 125);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Lixeira";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.Button2_Click);
-            // 
-            // Delet
-            // 
-            this.Delet.DataPropertyName = "DeletCommand";
-            this.Delet.HeaderText = "Delet";
-            this.Delet.MinimumWidth = 6;
-            this.Delet.Name = "Delet";
-            this.Delet.ReadOnly = true;
-            this.Delet.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Delet.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Delet.Width = 125;
+            this.RestaurarCommand.DataPropertyName = "RestaurarCommand";
+            this.RestaurarCommand.HeaderText = "RestaurarCommand";
+            this.RestaurarCommand.MinimumWidth = 6;
+            this.RestaurarCommand.Name = "RestaurarCommand";
+            this.RestaurarCommand.ReadOnly = true;
+            this.RestaurarCommand.Width = 125;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -130,32 +103,14 @@
             this.idDataGridViewTextBoxColumn.ReadOnly = true;
             this.idDataGridViewTextBoxColumn.Width = 125;
             // 
-            // carroDataGridViewTextBoxColumn
+            // usuarioDataGridViewTextBoxColumn
             // 
-            this.carroDataGridViewTextBoxColumn.DataPropertyName = "Carro";
-            this.carroDataGridViewTextBoxColumn.HeaderText = "Carro";
-            this.carroDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.carroDataGridViewTextBoxColumn.Name = "carroDataGridViewTextBoxColumn";
-            this.carroDataGridViewTextBoxColumn.ReadOnly = true;
-            this.carroDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // quantidadeDataGridViewTextBoxColumn
-            // 
-            this.quantidadeDataGridViewTextBoxColumn.DataPropertyName = "Quantidade";
-            this.quantidadeDataGridViewTextBoxColumn.HeaderText = "Quantidade";
-            this.quantidadeDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.quantidadeDataGridViewTextBoxColumn.Name = "quantidadeDataGridViewTextBoxColumn";
-            this.quantidadeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.quantidadeDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // valorDataGridViewTextBoxColumn
-            // 
-            this.valorDataGridViewTextBoxColumn.DataPropertyName = "Valor";
-            this.valorDataGridViewTextBoxColumn.HeaderText = "Valor";
-            this.valorDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.valorDataGridViewTextBoxColumn.Name = "valorDataGridViewTextBoxColumn";
-            this.valorDataGridViewTextBoxColumn.ReadOnly = true;
-            this.valorDataGridViewTextBoxColumn.Width = 125;
+            this.usuarioDataGridViewTextBoxColumn.DataPropertyName = "Usuario";
+            this.usuarioDataGridViewTextBoxColumn.HeaderText = "Usuario";
+            this.usuarioDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.usuarioDataGridViewTextBoxColumn.Name = "usuarioDataGridViewTextBoxColumn";
+            this.usuarioDataGridViewTextBoxColumn.ReadOnly = true;
+            this.usuarioDataGridViewTextBoxColumn.Width = 125;
             // 
             // ativoDataGridViewCheckBoxColumn
             // 
@@ -202,19 +157,17 @@
             this.datAltDataGridViewTextBoxColumn.ReadOnly = true;
             this.datAltDataGridViewTextBoxColumn.Width = 125;
             // 
-            // Form5
+            // LixeiraUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "Form5";
-            this.Text = "Form5";
-            this.Load += new System.EventHandler(this.Form5_Load);
+            this.Name = "LixeiraUsuarios";
+            this.Text = "LixeiraUsuarios";
+            this.Load += new System.EventHandler(this.LixeiraUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vendasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.querysInnerJoinDataSet1)).EndInit();
             this.ResumeLayout(false);
 
@@ -223,16 +176,12 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
         private QuerysInnerJoinDataSet1 querysInnerJoinDataSet1;
-        private System.Windows.Forms.BindingSource vendasBindingSource;
-        private QuerysInnerJoinDataSet1TableAdapters.VendasTableAdapter vendasTableAdapter;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.DataGridViewButtonColumn Delet;
+        private System.Windows.Forms.BindingSource usuariosBindingSource;
+        private QuerysInnerJoinDataSet1TableAdapters.UsuariosTableAdapter usuariosTableAdapter;
+        private System.Windows.Forms.DataGridViewButtonColumn RestaurarCommand;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn carroDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn quantidadeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn valorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn usuarioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn ativoDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn usuIncDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn usuAltDataGridViewTextBoxColumn;

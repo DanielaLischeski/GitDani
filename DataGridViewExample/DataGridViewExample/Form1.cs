@@ -58,11 +58,25 @@ namespace DataGridViewExample
                 this.dataGridView1.Rows[e.RowIndex].DataBoundItem).Row
                 as DataGridViewExample.QuerysInnerJoinDataSet1.CarrosRow;
 
+            //usamos o switch porque poderia ter outras opções, neste caso poderia até ser um if 
+            switch(e.ColumnIndex) //para escolher quais colunas vão deletar informações
+            {
+                //Coluna deletar
+                case 0: {
+                        this.carrosTableAdapter.DeleteQuery(carSelect.Id);                        
+                    } break;
+            }
+
             //MessageBox.Show(carSelect.Modelo); //para ver se está dando certo
             // MessageBox.Show(carSelect.Ano.ToString()); //para ver se está dando certo
 
-            this.carrosTableAdapter.DeleteQuery(carSelect.Id);
             this.carrosTableAdapter.CustomQuery(this.querysInnerJoinDataSet1.Carros); //para mostrar a lista atualizada
+        }
+
+        private void Button5_Click(object sender, EventArgs e)
+        {
+            Lixeira lixo = new Lixeira();
+            lixo.ShowDialog();
         }
     }
 }
