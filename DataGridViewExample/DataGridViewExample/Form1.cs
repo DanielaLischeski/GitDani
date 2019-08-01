@@ -1,4 +1,5 @@
-﻿using DataGridViewExample.Edicao;
+﻿using DataGridViewExample.Adicionar;
+using DataGridViewExample.Edicao;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,7 +30,21 @@ namespace DataGridViewExample
 
         private void Button1_Click(object sender, EventArgs e)
         {
-
+            frmAdicionar formAdd = new frmAdicionar();
+            formAdd.ShowDialog();
+            //Insert na tabela do banco de carros o novo registro
+            this.carrosTableAdapter.Insert(
+                formAdd.carrosRow.Modelo,
+                formAdd.carrosRow.Ano,
+                formAdd.carrosRow.Marca,
+                true,
+                1,
+                1,
+                DateTime.Now,
+                DateTime.Now
+                );
+            //Atualiza a tabela
+            this.carrosTableAdapter.Fill(this.querysInnerJoinDataSet1.Carros);
         }
 
         private void Button2_Click(object sender, EventArgs e)
@@ -97,6 +112,7 @@ namespace DataGridViewExample
         {
             Lixeira lixo = new Lixeira();
             lixo.ShowDialog();
+
         }
     }
 }

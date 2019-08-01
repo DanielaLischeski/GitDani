@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adicionar\frmAdicionar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adicionar\frmAdicionar.Designer.cs">
+      <DependentUpon>frmAdicionar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Edicao\frmEdicaoCarros.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +124,7 @@
     <Compile Include="LixeiraVendas.Designer.cs">
       <DependentUpon>LixeiraVendas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\Carro.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuerysInnerJoinDataSet1.Designer.cs">
@@ -125,6 +132,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QuerysInnerJoinDataSet1.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Adicionar\frmAdicionar.resx">
+      <DependentUpon>frmAdicionar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Edicao\frmEdicaoCarros.resx">
       <DependentUpon>frmEdicaoCarros.cs</DependentUpon>
     </EmbeddedResource>
@@ -184,8 +194,8 @@
     </None>
     <None Include="QuerysInnerJoinDataSet1.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>QuerysInnerJoinDataSet1.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>QuerysInnerJoinDataSet11.Designer.cs</LastGenOutput>
     </None>
     <None Include="QuerysInnerJoinDataSet1.xss">
       <DependentUpon>QuerysInnerJoinDataSet1.xsd</DependentUpon>
