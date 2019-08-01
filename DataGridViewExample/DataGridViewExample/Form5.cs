@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataGridViewExample.Edicao;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -35,6 +36,16 @@ namespace DataGridViewExample
                 case 0:
                     {
                         this.vendasTableAdapter.DeleteQuery(vendasSelect.Id);
+                    }
+                    break;
+                case 1:
+                    {
+                        frmEdicaoVendas editVenda = new frmEdicaoVendas();
+                        editVenda.VendasRow = vendasSelect;
+                        editVenda.ShowDialog();
+
+                        this.vendasTableAdapter.Update(editVenda.VendasRow);
+
                     }
                     break;
             }
