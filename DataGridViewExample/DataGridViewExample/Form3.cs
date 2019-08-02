@@ -63,14 +63,16 @@ namespace DataGridViewExample
         {
             LixeiraUsuarios lixo = new LixeiraUsuarios();
             lixo.ShowDialog();
+            this.usuariosTableAdapter.CustomQuery(this.querysInnerJoinDataSet1.Usuarios);
         }
 
         private void Button1_Click(object sender, EventArgs e)
         {
             frmAdicionarUsuarios formAddUsuarios = new frmAdicionarUsuarios();
             formAddUsuarios.ShowDialog();
-            
-            this.usuariosTableAdapter.Insert(
+
+            if (!string.IsNullOrEmpty(formAddUsuarios.usuariosRow?.NomeUsuario))
+                this.usuariosTableAdapter.Insert(
                 formAddUsuarios.usuariosRow.NomeUsuario,                
                 true,
                 1,

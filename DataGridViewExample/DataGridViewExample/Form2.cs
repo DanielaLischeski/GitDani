@@ -30,8 +30,9 @@ namespace DataGridViewExample
         {
             frmAdicionarMarcas formAddMarcas = new frmAdicionarMarcas();
             formAddMarcas.ShowDialog();
-           
-            this.marcasTableAdapter.Insert(
+
+            if (!string.IsNullOrEmpty(formAddMarcas.marcasRow?.Nome))
+                this.marcasTableAdapter.Insert(
                 formAddMarcas.marcasRow.Nome,
                 true,
                 1,
@@ -75,6 +76,7 @@ namespace DataGridViewExample
         {
             LixeiraMarcas lixo = new LixeiraMarcas();
             lixo.ShowDialog();
+            this.marcasTableAdapter.CustomQuery(this.querysInnerJoinDataSet1.Marcas);
         }
     }
 }

@@ -8,9 +8,9 @@ namespace DataGridViewExample.Model
 {
     public class Venda
     {
-        public int NomeCarro { get; set; }
-        public int Quantidade { get; set; }
-        public decimal Valor { get; set; }
+        public int NomeCarro { get; set; } = 0;
+        public int Quantidade { get; set; } 
+        public decimal Valor { get; set; } = 0;
         public bool Ativo { get; set; } = true;
         public int UsuInc { get; set; }
         public int UsuAlt { get; set; }

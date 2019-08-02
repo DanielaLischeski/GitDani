@@ -30,12 +30,13 @@ namespace DataGridViewExample.Adicionar
 
         private void Button1_Click(object sender, EventArgs e)
         {
+            decimal.TryParse(textBox1.Text, out decimal valor); //para não adicionar linha em branco
             vendasRow = new Venda
             {
-
                 NomeCarro = (int)comboBox1.SelectedValue,
                 Quantidade = (int)numericUpDown1.Value,
-                Valor = decimal.Parse(textBox1.Text),
+                Valor = valor
+                //Valor = decimal.Parse(textBox1.Text)  //era asism antes de validar para não adicionar linha em branco
         };
 
             this.Close();

@@ -33,7 +33,8 @@ namespace DataGridViewExample
             frmAdicionar formAdd = new frmAdicionar();
             formAdd.ShowDialog();
             //Insert na tabela do banco de carros o novo registro
-            this.carrosTableAdapter.Insert(
+            if (!string.IsNullOrEmpty(formAdd.carrosRow?.Modelo)) //se é uma string nula ou vazia não adiciona, também permite fechar a janela de adicionar sem dar erro
+                this.carrosTableAdapter.Insert(
                 formAdd.carrosRow.Modelo,
                 formAdd.carrosRow.Ano,
                 formAdd.carrosRow.Marca,
@@ -85,6 +86,7 @@ namespace DataGridViewExample
                         frmEdicaoCarros editCarro = new frmEdicaoCarros();
                         editCarro.CarrosRow = carSelect;
                         editCarro.ShowDialog();
+                      
 
                         //this.carrosTableAdapter.Update(editCarrro.CarrosRow); 
                         //é o mesmo que:
