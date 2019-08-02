@@ -8,7 +8,7 @@ namespace DataGridViewExample.Model
 {
     public class Venda
     {
-        public string NomeCarro { get; set; }
+        public int NomeCarro { get; set; }
         public int Quantidade { get; set; }
         public decimal Valor { get; set; }
         public bool Ativo { get; set; } = true;

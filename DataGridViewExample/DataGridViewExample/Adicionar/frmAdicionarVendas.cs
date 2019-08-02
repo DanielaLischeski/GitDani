@@ -33,7 +33,7 @@ namespace DataGridViewExample.Adicionar
             vendasRow = new Venda
             {
 
-                NomeCarro = comboBox1.Text,
+                NomeCarro = (int)comboBox1.SelectedValue,
                 Quantidade = (int)numericUpDown1.Value,
                 Valor = decimal.Parse(textBox1.Text),
         };
