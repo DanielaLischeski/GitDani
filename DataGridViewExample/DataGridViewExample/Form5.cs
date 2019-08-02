@@ -1,4 +1,5 @@
-﻿using DataGridViewExample.Edicao;
+﻿using DataGridViewExample.Adicionar;
+using DataGridViewExample.Edicao;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -57,6 +58,25 @@ namespace DataGridViewExample
         {
             LixeiraVendas lixo = new LixeiraVendas();
             lixo.ShowDialog();
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            frmAdicionarVendas formAddVendas = new frmAdicionarVendas();
+            formAddVendas.ShowDialog();
+            
+            this.vendasTableAdapter.Insert(
+                formAddVendas.vendasRow.NomeCarro,
+                formAddVendas.vendasRow.Quantidade,
+                formAddVendas.vendasRow.Valor,
+                true,
+                1,
+                1,
+                DateTime.Now,
+                DateTime.Now
+                );
+            //Atualiza a tabela
+            this.vendasTableAdapter.Fill(this.querysInnerJoinDataSet1.Vendas);
         }
     }
 }

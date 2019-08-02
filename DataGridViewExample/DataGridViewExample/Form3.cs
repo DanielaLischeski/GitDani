@@ -1,4 +1,5 @@
-﻿using DataGridViewExample.Edicao;
+﻿using DataGridViewExample.Adicionar;
+using DataGridViewExample.Edicao;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,6 +28,7 @@ namespace DataGridViewExample
 
         private void Button2_Click(object sender, EventArgs e)
         {
+
 
         }
 
@@ -61,6 +63,24 @@ namespace DataGridViewExample
         {
             LixeiraUsuarios lixo = new LixeiraUsuarios();
             lixo.ShowDialog();
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            frmAdicionarUsuarios formAddUsuarios = new frmAdicionarUsuarios();
+            formAddUsuarios.ShowDialog();
+            
+            this.usuariosTableAdapter.Insert(
+                formAddUsuarios.usuariosRow.NomeUsuario,                
+                true,
+                1,
+                1,
+                DateTime.Now,
+                DateTime.Now
+                );
+            //Atualiza a tabela
+            this.usuariosTableAdapter.Fill(this.querysInnerJoinDataSet1.Usuarios);
+
         }
     }
 }

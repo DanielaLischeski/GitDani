@@ -1,4 +1,5 @@
-﻿using DataGridViewExample.Edicao;
+﻿using DataGridViewExample.Adicionar;
+using DataGridViewExample.Edicao;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,7 +28,19 @@ namespace DataGridViewExample
 
         private void Button1_Click(object sender, EventArgs e)
         {
-
+            frmAdicionarMarcas formAddMarcas = new frmAdicionarMarcas();
+            formAddMarcas.ShowDialog();
+           
+            this.marcasTableAdapter.Insert(
+                formAddMarcas.marcasRow.Nome,
+                true,
+                1,
+                1,
+                DateTime.Now,
+                DateTime.Now
+                );
+            //Atualiza a tabela
+            this.marcasTableAdapter.Fill(this.querysInnerJoinDataSet1.Marcas);
         }
 
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -47,10 +60,9 @@ namespace DataGridViewExample
                     {
                         frmEdicaoMarcas editMarca = new frmEdicaoMarcas();
                         editMarca.MarcasRow = marcasSelect;
-                        editMarca.ShowDialog();
-
-                        this.marcasTableAdapter.Update(editMarca.MarcasRow);                     
-
+                        editMarca.ShowDialog();                                             
+                        
+                        this.marcasTableAdapter.Update(editMarca.MarcasRow);
                     }
                     break;
             }
