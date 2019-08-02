@@ -76,7 +76,7 @@ namespace DataGridViewExample
         {
             LixeiraMarcas lixo = new LixeiraMarcas();
             lixo.ShowDialog();
-            this.marcasTableAdapter.CustomQuery(this.querysInnerJoinDataSet1.Marcas);
+            this.marcasTableAdapter.CustomQuery(this.querysInnerJoinDataSet1.Marcas); //permite atualizar a tabela dinamicamente
         }
     }
 }

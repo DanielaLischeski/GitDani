@@ -63,7 +63,7 @@ namespace DataGridViewExample
         {
             LixeiraUsuarios lixo = new LixeiraUsuarios();
             lixo.ShowDialog();
-            this.usuariosTableAdapter.CustomQuery(this.querysInnerJoinDataSet1.Usuarios);
+            this.usuariosTableAdapter.CustomQuery(this.querysInnerJoinDataSet1.Usuarios); //permite atualizar a tabela dinamicamente
         }
 
         private void Button1_Click(object sender, EventArgs e)

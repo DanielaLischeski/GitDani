@@ -8,8 +8,8 @@ namespace DataGridViewExample.Model
 {
     public class Venda
     {
-        public int NomeCarro { get; set; } = 0;
-        public int Quantidade { get; set; } 
+        public int Carro { get; set; } = 0; //as varoáveis estão assinadas com 0, ou seja, se eu não informar nada será automaticamente 0
+        public int Quantidade { get; set; } = 0;
         public decimal Valor { get; set; } = 0;
         public bool Ativo { get; set; } = true;
         public int UsuInc { get; set; }

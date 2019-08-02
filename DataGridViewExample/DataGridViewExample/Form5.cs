@@ -58,7 +58,7 @@ namespace DataGridViewExample
         {
             LixeiraVendas lixo = new LixeiraVendas();
             lixo.ShowDialog();
-            this.vendasTableAdapter.CustomQuery(this.querysInnerJoinDataSet1.Vendas);
+            this.vendasTableAdapter.CustomQuery(this.querysInnerJoinDataSet1.Vendas); //permite atualizar a tabela dinamicamente
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -66,16 +66,16 @@ namespace DataGridViewExample
             frmAdicionarVendas formAddVendas = new frmAdicionarVendas();
             formAddVendas.ShowDialog();
 
-            if (formAddVendas.vendasRow?.NomeCarro > 0 && formAddVendas.vendasRow?.Valor > 0)
+            if (formAddVendas.vendasRow?.Carro > 0 && formAddVendas.vendasRow?.Valor > 0) //consigo comparar > 0, pois assinei as variáveis com 0 na classe Venda
                 this.vendasTableAdapter.Insert(
-            formAddVendas.vendasRow.NomeCarro,
+            formAddVendas.vendasRow.Carro,
             formAddVendas.vendasRow.Quantidade,
             formAddVendas.vendasRow.Valor,
-            true,
+            true, //é o mesmo que: ormAddVendas.vendasRow.Ativo,
+            1,    
             1,
-            1,
-            DateTime.Now,
-            DateTime.Now
+            DateTime.Now, //é o mesmo que: ormAddVendas.vendasRow.DatInc,
+            DateTime.Now  //é o mesmo que: ormAddVendas.vendasRow.DatAlt,
             );
             //Atualiza a tabela
             this.vendasTableAdapter.Fill(this.querysInnerJoinDataSet1.Vendas);

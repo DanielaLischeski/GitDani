@@ -33,7 +33,7 @@ namespace DataGridViewExample.Adicionar
             decimal.TryParse(textBox1.Text, out decimal valor); //para não adicionar linha em branco
             vendasRow = new Venda
             {
-                NomeCarro = (int)comboBox1.SelectedValue,
+                Carro = (int)comboBox1.SelectedValue,
                 Quantidade = (int)numericUpDown1.Value,
                 Valor = valor
                 //Valor = decimal.Parse(textBox1.Text)  //era asism antes de validar para não adicionar linha em branco
