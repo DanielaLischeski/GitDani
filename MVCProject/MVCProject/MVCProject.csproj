@@ -67,17 +67,77 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SistemaBibliotecaDBDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="View\Adicionar\frmAdicionarAutores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Adicionar\frmAdicionarAutores.Designer.cs">
+      <DependentUpon>frmAdicionarAutores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Adicionar\frmAdicionarEditoras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Adicionar\frmAdicionarEditoras.Designer.cs">
+      <DependentUpon>frmAdicionarEditoras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Adicionar\frmAdicionarGeneros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Adicionar\frmAdicionarGeneros.Designer.cs">
+      <DependentUpon>frmAdicionarGeneros.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Adicionar\frmAdicionarLivros.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\Adicionar\frmAdicionarLivros.Designer.cs">
       <DependentUpon>frmAdicionarLivros.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Adicionar\frmAdicionarLocacoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Adicionar\frmAdicionarLocacoes.Designer.cs">
+      <DependentUpon>frmAdicionarLocacoes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Adicionar\frmAdicionarUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Adicionar\frmAdicionarUsuarios.Designer.cs">
+      <DependentUpon>frmAdicionarUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Editar\frmEditarAutores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Editar\frmEditarAutores.Designer.cs">
+      <DependentUpon>frmEditarAutores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Editar\frmEditarEditoras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Editar\frmEditarEditoras.Designer.cs">
+      <DependentUpon>frmEditarEditoras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Editar\frmEditarGeneros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Editar\frmEditarGeneros.Designer.cs">
+      <DependentUpon>frmEditarGeneros.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Editar\frmEditarLivros.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\Editar\frmEditarLivros.Designer.cs">
       <DependentUpon>frmEditarLivros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Editar\frmEditarLocacoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Editar\frmEditarLocacoes.Designer.cs">
+      <DependentUpon>frmEditarLocacoes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Editar\frmEditarUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Editar\frmEditarUsuarios.Designer.cs">
+      <DependentUpon>frmEditarUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="View\frmAutores.cs">
       <SubType>Form</SubType>
@@ -139,11 +199,41 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\Adicionar\frmAdicionarAutores.resx">
+      <DependentUpon>frmAdicionarAutores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Adicionar\frmAdicionarEditoras.resx">
+      <DependentUpon>frmAdicionarEditoras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Adicionar\frmAdicionarGeneros.resx">
+      <DependentUpon>frmAdicionarGeneros.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Adicionar\frmAdicionarLivros.resx">
       <DependentUpon>frmAdicionarLivros.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Adicionar\frmAdicionarLocacoes.resx">
+      <DependentUpon>frmAdicionarLocacoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Adicionar\frmAdicionarUsuarios.resx">
+      <DependentUpon>frmAdicionarUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Editar\frmEditarAutores.resx">
+      <DependentUpon>frmEditarAutores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Editar\frmEditarEditoras.resx">
+      <DependentUpon>frmEditarEditoras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Editar\frmEditarGeneros.resx">
+      <DependentUpon>frmEditarGeneros.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Editar\frmEditarLivros.resx">
       <DependentUpon>frmEditarLivros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Editar\frmEditarLocacoes.resx">
+      <DependentUpon>frmEditarLocacoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Editar\frmEditarUsuarios.resx">
+      <DependentUpon>frmEditarUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\frmAutores.resx">
       <DependentUpon>frmAutores.cs</DependentUpon>

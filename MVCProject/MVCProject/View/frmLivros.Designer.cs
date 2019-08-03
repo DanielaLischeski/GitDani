@@ -71,7 +71,7 @@
             this.datIncDataGridViewTextBoxColumn,
             this.datAltDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.livrosBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(1, 110);
+            this.dataGridView1.Location = new System.Drawing.Point(1, 114);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
