@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MVCProject.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,18 @@ namespace MVCProject.View.Adicionar
         public frmAdicionarGeneros()
         {
             InitializeComponent();
+        }
+
+        public Genero generosRow;
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            generosRow = new Genero
+            {
+                Tipo = textBox1.Text,
+                Descricao = textBox2.Text,
+            };
+            this.Close();
         }
     }
 }

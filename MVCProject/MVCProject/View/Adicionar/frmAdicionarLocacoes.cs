@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MVCProject.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +18,8 @@ namespace MVCProject.View.Adicionar
             InitializeComponent();
         }
 
+        public Locacao locacoesRow;
+
         private void FrmAdicionarLocacoes_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'sistemaBibliotecaDBDataSet.Usuarios' table. You can move, or remove it, as needed.
@@ -24,6 +27,20 @@ namespace MVCProject.View.Adicionar
             // TODO: This line of code loads data into the 'sistemaBibliotecaDBDataSet.Livros' table. You can move, or remove it, as needed.
             this.livrosTableAdapter.Fill(this.sistemaBibliotecaDBDataSet.Livros);
 
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            locacoesRow = new Locacao
+            {
+                Livro = (int)comboBox1.SelectedValue,
+                Usuario = (int)comboBox2.SelectedValue,
+                Tipo = (int)numericUpDown1.Value,
+                Devolucao = dateTimePicker1.Value,
+                UsuInc = Form1.UsuarioLogado,
+                UsuAlt = Form1.UsuarioLogado
+            };
+            this.Close();
         }
     }
 }

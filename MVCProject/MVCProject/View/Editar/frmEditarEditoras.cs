@@ -16,5 +16,22 @@ namespace MVCProject.View.Editar
         {
             InitializeComponent();
         }
+
+        public MVCProject.SistemaBibliotecaDBDataSet.EditorasRow EditorasRow;
+
+        private void FrmEditarEditoras_Load(object sender, EventArgs e)
+        {
+            textBox1.Text = EditorasRow.Nome;
+            textBox2.Text = EditorasRow.Descricao;
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            EditorasRow.Nome = textBox1.Text;
+            EditorasRow.Descricao = textBox2.Text;
+            
+            this.Close();
+        }
+     
     }
 }

@@ -30,6 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.livrosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sistemaBibliotecaDBDataSet = new MVCProject.SistemaBibliotecaDBDataSet();
+            this.button1 = new System.Windows.Forms.Button();
+            this.livrosTableAdapter = new MVCProject.SistemaBibliotecaDBDataSetTableAdapters.LivrosTableAdapter();
+            this.Deletar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.registroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tituloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,10 +49,6 @@
             this.usuAltDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datIncDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datAltDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.livrosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sistemaBibliotecaDBDataSet = new MVCProject.SistemaBibliotecaDBDataSet();
-            this.button1 = new System.Windows.Forms.Button();
-            this.livrosTableAdapter = new MVCProject.SistemaBibliotecaDBDataSetTableAdapters.LivrosTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.livrosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sistemaBibliotecaDBDataSet)).BeginInit();
@@ -54,9 +56,13 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Deletar,
+            this.Editar,
             this.idDataGridViewTextBoxColumn,
             this.registroDataGridViewTextBoxColumn,
             this.tituloDataGridViewTextBoxColumn,
@@ -73,116 +79,12 @@
             this.dataGridView1.DataSource = this.livrosBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(1, 114);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(799, 337);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // registroDataGridViewTextBoxColumn
-            // 
-            this.registroDataGridViewTextBoxColumn.DataPropertyName = "Registro";
-            this.registroDataGridViewTextBoxColumn.HeaderText = "Registro";
-            this.registroDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.registroDataGridViewTextBoxColumn.Name = "registroDataGridViewTextBoxColumn";
-            this.registroDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // tituloDataGridViewTextBoxColumn
-            // 
-            this.tituloDataGridViewTextBoxColumn.DataPropertyName = "Titulo";
-            this.tituloDataGridViewTextBoxColumn.HeaderText = "Titulo";
-            this.tituloDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.tituloDataGridViewTextBoxColumn.Name = "tituloDataGridViewTextBoxColumn";
-            this.tituloDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // isbnDataGridViewTextBoxColumn
-            // 
-            this.isbnDataGridViewTextBoxColumn.DataPropertyName = "Isbn";
-            this.isbnDataGridViewTextBoxColumn.HeaderText = "Isbn";
-            this.isbnDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.isbnDataGridViewTextBoxColumn.Name = "isbnDataGridViewTextBoxColumn";
-            this.isbnDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // generoDataGridViewTextBoxColumn
-            // 
-            this.generoDataGridViewTextBoxColumn.DataPropertyName = "Genero";
-            this.generoDataGridViewTextBoxColumn.HeaderText = "Genero";
-            this.generoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.generoDataGridViewTextBoxColumn.Name = "generoDataGridViewTextBoxColumn";
-            this.generoDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // editoraDataGridViewTextBoxColumn
-            // 
-            this.editoraDataGridViewTextBoxColumn.DataPropertyName = "Editora";
-            this.editoraDataGridViewTextBoxColumn.HeaderText = "Editora";
-            this.editoraDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.editoraDataGridViewTextBoxColumn.Name = "editoraDataGridViewTextBoxColumn";
-            this.editoraDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // sinopseDataGridViewTextBoxColumn
-            // 
-            this.sinopseDataGridViewTextBoxColumn.DataPropertyName = "Sinopse";
-            this.sinopseDataGridViewTextBoxColumn.HeaderText = "Sinopse";
-            this.sinopseDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.sinopseDataGridViewTextBoxColumn.Name = "sinopseDataGridViewTextBoxColumn";
-            this.sinopseDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // observacoesDataGridViewTextBoxColumn
-            // 
-            this.observacoesDataGridViewTextBoxColumn.DataPropertyName = "Observacoes";
-            this.observacoesDataGridViewTextBoxColumn.HeaderText = "Observacoes";
-            this.observacoesDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.observacoesDataGridViewTextBoxColumn.Name = "observacoesDataGridViewTextBoxColumn";
-            this.observacoesDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // ativoDataGridViewCheckBoxColumn
-            // 
-            this.ativoDataGridViewCheckBoxColumn.DataPropertyName = "Ativo";
-            this.ativoDataGridViewCheckBoxColumn.HeaderText = "Ativo";
-            this.ativoDataGridViewCheckBoxColumn.MinimumWidth = 6;
-            this.ativoDataGridViewCheckBoxColumn.Name = "ativoDataGridViewCheckBoxColumn";
-            this.ativoDataGridViewCheckBoxColumn.Width = 125;
-            // 
-            // usuIncDataGridViewTextBoxColumn
-            // 
-            this.usuIncDataGridViewTextBoxColumn.DataPropertyName = "UsuInc";
-            this.usuIncDataGridViewTextBoxColumn.HeaderText = "UsuInc";
-            this.usuIncDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.usuIncDataGridViewTextBoxColumn.Name = "usuIncDataGridViewTextBoxColumn";
-            this.usuIncDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // usuAltDataGridViewTextBoxColumn
-            // 
-            this.usuAltDataGridViewTextBoxColumn.DataPropertyName = "UsuAlt";
-            this.usuAltDataGridViewTextBoxColumn.HeaderText = "UsuAlt";
-            this.usuAltDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.usuAltDataGridViewTextBoxColumn.Name = "usuAltDataGridViewTextBoxColumn";
-            this.usuAltDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // datIncDataGridViewTextBoxColumn
-            // 
-            this.datIncDataGridViewTextBoxColumn.DataPropertyName = "DatInc";
-            this.datIncDataGridViewTextBoxColumn.HeaderText = "DatInc";
-            this.datIncDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.datIncDataGridViewTextBoxColumn.Name = "datIncDataGridViewTextBoxColumn";
-            this.datIncDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // datAltDataGridViewTextBoxColumn
-            // 
-            this.datAltDataGridViewTextBoxColumn.DataPropertyName = "DatAlt";
-            this.datAltDataGridViewTextBoxColumn.HeaderText = "DatAlt";
-            this.datAltDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.datAltDataGridViewTextBoxColumn.Name = "datAltDataGridViewTextBoxColumn";
-            this.datAltDataGridViewTextBoxColumn.Width = 125;
             // 
             // livrosBindingSource
             // 
@@ -208,6 +110,141 @@
             // 
             this.livrosTableAdapter.ClearBeforeFill = true;
             // 
+            // Deletar
+            // 
+            this.Deletar.DataPropertyName = "DeletCommand";
+            this.Deletar.HeaderText = "Deletar";
+            this.Deletar.MinimumWidth = 6;
+            this.Deletar.Name = "Deletar";
+            this.Deletar.ReadOnly = true;
+            this.Deletar.Width = 125;
+            // 
+            // Editar
+            // 
+            this.Editar.DataPropertyName = "EditCommand";
+            this.Editar.HeaderText = "Editar";
+            this.Editar.MinimumWidth = 6;
+            this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
+            this.Editar.Width = 125;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // registroDataGridViewTextBoxColumn
+            // 
+            this.registroDataGridViewTextBoxColumn.DataPropertyName = "Registro";
+            this.registroDataGridViewTextBoxColumn.HeaderText = "Registro";
+            this.registroDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.registroDataGridViewTextBoxColumn.Name = "registroDataGridViewTextBoxColumn";
+            this.registroDataGridViewTextBoxColumn.ReadOnly = true;
+            this.registroDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // tituloDataGridViewTextBoxColumn
+            // 
+            this.tituloDataGridViewTextBoxColumn.DataPropertyName = "Titulo";
+            this.tituloDataGridViewTextBoxColumn.HeaderText = "Titulo";
+            this.tituloDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tituloDataGridViewTextBoxColumn.Name = "tituloDataGridViewTextBoxColumn";
+            this.tituloDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tituloDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // isbnDataGridViewTextBoxColumn
+            // 
+            this.isbnDataGridViewTextBoxColumn.DataPropertyName = "Isbn";
+            this.isbnDataGridViewTextBoxColumn.HeaderText = "Isbn";
+            this.isbnDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.isbnDataGridViewTextBoxColumn.Name = "isbnDataGridViewTextBoxColumn";
+            this.isbnDataGridViewTextBoxColumn.ReadOnly = true;
+            this.isbnDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // generoDataGridViewTextBoxColumn
+            // 
+            this.generoDataGridViewTextBoxColumn.DataPropertyName = "Genero";
+            this.generoDataGridViewTextBoxColumn.HeaderText = "Genero";
+            this.generoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.generoDataGridViewTextBoxColumn.Name = "generoDataGridViewTextBoxColumn";
+            this.generoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.generoDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // editoraDataGridViewTextBoxColumn
+            // 
+            this.editoraDataGridViewTextBoxColumn.DataPropertyName = "Editora";
+            this.editoraDataGridViewTextBoxColumn.HeaderText = "Editora";
+            this.editoraDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.editoraDataGridViewTextBoxColumn.Name = "editoraDataGridViewTextBoxColumn";
+            this.editoraDataGridViewTextBoxColumn.ReadOnly = true;
+            this.editoraDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // sinopseDataGridViewTextBoxColumn
+            // 
+            this.sinopseDataGridViewTextBoxColumn.DataPropertyName = "Sinopse";
+            this.sinopseDataGridViewTextBoxColumn.HeaderText = "Sinopse";
+            this.sinopseDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.sinopseDataGridViewTextBoxColumn.Name = "sinopseDataGridViewTextBoxColumn";
+            this.sinopseDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sinopseDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // observacoesDataGridViewTextBoxColumn
+            // 
+            this.observacoesDataGridViewTextBoxColumn.DataPropertyName = "Observacoes";
+            this.observacoesDataGridViewTextBoxColumn.HeaderText = "Observacoes";
+            this.observacoesDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.observacoesDataGridViewTextBoxColumn.Name = "observacoesDataGridViewTextBoxColumn";
+            this.observacoesDataGridViewTextBoxColumn.ReadOnly = true;
+            this.observacoesDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // ativoDataGridViewCheckBoxColumn
+            // 
+            this.ativoDataGridViewCheckBoxColumn.DataPropertyName = "Ativo";
+            this.ativoDataGridViewCheckBoxColumn.HeaderText = "Ativo";
+            this.ativoDataGridViewCheckBoxColumn.MinimumWidth = 6;
+            this.ativoDataGridViewCheckBoxColumn.Name = "ativoDataGridViewCheckBoxColumn";
+            this.ativoDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.ativoDataGridViewCheckBoxColumn.Width = 125;
+            // 
+            // usuIncDataGridViewTextBoxColumn
+            // 
+            this.usuIncDataGridViewTextBoxColumn.DataPropertyName = "UsuInc";
+            this.usuIncDataGridViewTextBoxColumn.HeaderText = "UsuInc";
+            this.usuIncDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.usuIncDataGridViewTextBoxColumn.Name = "usuIncDataGridViewTextBoxColumn";
+            this.usuIncDataGridViewTextBoxColumn.ReadOnly = true;
+            this.usuIncDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // usuAltDataGridViewTextBoxColumn
+            // 
+            this.usuAltDataGridViewTextBoxColumn.DataPropertyName = "UsuAlt";
+            this.usuAltDataGridViewTextBoxColumn.HeaderText = "UsuAlt";
+            this.usuAltDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.usuAltDataGridViewTextBoxColumn.Name = "usuAltDataGridViewTextBoxColumn";
+            this.usuAltDataGridViewTextBoxColumn.ReadOnly = true;
+            this.usuAltDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // datIncDataGridViewTextBoxColumn
+            // 
+            this.datIncDataGridViewTextBoxColumn.DataPropertyName = "DatInc";
+            this.datIncDataGridViewTextBoxColumn.HeaderText = "DatInc";
+            this.datIncDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.datIncDataGridViewTextBoxColumn.Name = "datIncDataGridViewTextBoxColumn";
+            this.datIncDataGridViewTextBoxColumn.ReadOnly = true;
+            this.datIncDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // datAltDataGridViewTextBoxColumn
+            // 
+            this.datAltDataGridViewTextBoxColumn.DataPropertyName = "DatAlt";
+            this.datAltDataGridViewTextBoxColumn.HeaderText = "DatAlt";
+            this.datAltDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.datAltDataGridViewTextBoxColumn.Name = "datAltDataGridViewTextBoxColumn";
+            this.datAltDataGridViewTextBoxColumn.ReadOnly = true;
+            this.datAltDataGridViewTextBoxColumn.Width = 125;
+            // 
             // frmLivros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -232,6 +269,8 @@
         private SistemaBibliotecaDBDataSet sistemaBibliotecaDBDataSet;
         private System.Windows.Forms.BindingSource livrosBindingSource;
         private SistemaBibliotecaDBDataSetTableAdapters.LivrosTableAdapter livrosTableAdapter;
+        private System.Windows.Forms.DataGridViewButtonColumn Deletar;
+        private System.Windows.Forms.DataGridViewButtonColumn Editar;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn registroDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tituloDataGridViewTextBoxColumn;

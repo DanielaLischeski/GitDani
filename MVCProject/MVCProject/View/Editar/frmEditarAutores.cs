@@ -16,5 +16,24 @@ namespace MVCProject.View.Editar
         {
             InitializeComponent();
         }
+
+        public MVCProject.SistemaBibliotecaDBDataSet.AutoresRow AutoresRow;
+
+      
+        private void FrmEditarAutores_Load(object sender, EventArgs e)
+        {
+            textBox1.Text = AutoresRow.Nome;
+            textBox2.Text = AutoresRow.Descricao;
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            AutoresRow.Nome = textBox1.Text;
+            AutoresRow.Descricao = textBox2.Text;
+
+            this.Close();
+
+        }
+
     }
 }

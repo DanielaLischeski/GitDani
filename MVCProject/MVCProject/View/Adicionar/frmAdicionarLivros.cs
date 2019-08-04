@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MVCProject.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +18,9 @@ namespace MVCProject.View.Adicionar
             InitializeComponent();
         }
 
+        public Livro livrosRow;
+
+
         private void FrmAdicionarLivros_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'sistemaBibliotecaDBDataSet.Editoras' table. You can move, or remove it, as needed.
@@ -24,6 +28,28 @@ namespace MVCProject.View.Adicionar
             // TODO: This line of code loads data into the 'sistemaBibliotecaDBDataSet.Generos' table. You can move, or remove it, as needed.
             this.generosTableAdapter.Fill(this.sistemaBibliotecaDBDataSet.Generos);
 
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            livrosRow = new Livro
+            {
+                Registro = (int)numericUpDown1.Value,
+                Titulo = textBox2.Text,
+                Isbn = textBox1.Text,
+                Genero = (int)comboBox1.SelectedValue,
+                Editora = (int)comboBox2.SelectedValue,
+                Sinopse = textBox4.Text,
+                Observacoes = textBox5.Text,
+                UsuInc = Form1.UsuarioLogado,
+                UsuAlt = Form1.UsuarioLogado
+            };
+            this.Close();
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+         
         }
     }
 }

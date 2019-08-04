@@ -111,6 +111,7 @@
             this.button1.TabIndex = 8;
             this.button1.Text = "Salvar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // frmEditarUsuarios
             // 
@@ -128,6 +129,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmEditarUsuarios";
             this.Text = "Editar Usuários";
+            this.Load += new System.EventHandler(this.FrmEditarUsuarios_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

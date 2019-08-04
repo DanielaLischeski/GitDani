@@ -34,18 +34,19 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.sistemaBibliotecaDBDataSet = new MVCProject.SistemaBibliotecaDBDataSet();
             this.livrosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.livrosTableAdapter = new MVCProject.SistemaBibliotecaDBDataSetTableAdapters.LivrosTableAdapter();
+            this.sistemaBibliotecaDBDataSet = new MVCProject.SistemaBibliotecaDBDataSet();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.livrosTableAdapter = new MVCProject.SistemaBibliotecaDBDataSetTableAdapters.LivrosTableAdapter();
             this.usuariosTableAdapter = new MVCProject.SistemaBibliotecaDBDataSetTableAdapters.UsuariosTableAdapter();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.sistemaBibliotecaDBDataSet)).BeginInit();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.livrosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sistemaBibliotecaDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -95,6 +96,16 @@
             this.comboBox1.TabIndex = 4;
             this.comboBox1.ValueMember = "Id";
             // 
+            // livrosBindingSource
+            // 
+            this.livrosBindingSource.DataMember = "Livros";
+            this.livrosBindingSource.DataSource = this.sistemaBibliotecaDBDataSet;
+            // 
+            // sistemaBibliotecaDBDataSet
+            // 
+            this.sistemaBibliotecaDBDataSet.DataSetName = "SistemaBibliotecaDBDataSet";
+            this.sistemaBibliotecaDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // comboBox2
             // 
             this.comboBox2.DataSource = this.usuariosBindingSource;
@@ -106,24 +117,14 @@
             this.comboBox2.TabIndex = 5;
             this.comboBox2.ValueMember = "Id";
             // 
-            // sistemaBibliotecaDBDataSet
-            // 
-            this.sistemaBibliotecaDBDataSet.DataSetName = "SistemaBibliotecaDBDataSet";
-            this.sistemaBibliotecaDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // livrosBindingSource
-            // 
-            this.livrosBindingSource.DataMember = "Livros";
-            this.livrosBindingSource.DataSource = this.sistemaBibliotecaDBDataSet;
-            // 
-            // livrosTableAdapter
-            // 
-            this.livrosTableAdapter.ClearBeforeFill = true;
-            // 
             // usuariosBindingSource
             // 
             this.usuariosBindingSource.DataMember = "Usuarios";
             this.usuariosBindingSource.DataSource = this.sistemaBibliotecaDBDataSet;
+            // 
+            // livrosTableAdapter
+            // 
+            this.livrosTableAdapter.ClearBeforeFill = true;
             // 
             // usuariosTableAdapter
             // 
@@ -136,13 +137,6 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(401, 22);
             this.dateTimePicker1.TabIndex = 6;
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(108, 131);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(403, 22);
-            this.textBox1.TabIndex = 7;
-            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(26, 238);
@@ -151,14 +145,22 @@
             this.button1.TabIndex = 8;
             this.button1.Text = "Salvar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(110, 130);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(400, 22);
+            this.numericUpDown1.TabIndex = 9;
             // 
             // frmEditarLocacoes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(544, 435);
+            this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
@@ -169,9 +171,10 @@
             this.Name = "frmEditarLocacoes";
             this.Text = "Editar Locações";
             this.Load += new System.EventHandler(this.FrmEditarLocacoes_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.sistemaBibliotecaDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.livrosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sistemaBibliotecaDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,7 +194,7 @@
         private System.Windows.Forms.BindingSource usuariosBindingSource;
         private SistemaBibliotecaDBDataSetTableAdapters.UsuariosTableAdapter usuariosTableAdapter;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
     }
 }

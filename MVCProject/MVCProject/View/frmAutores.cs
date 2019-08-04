@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MVCProject.View.Adicionar;
+using MVCProject.View.Editar;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,6 +24,51 @@ namespace MVCProject.View
             // TODO: This line of code loads data into the 'sistemaBibliotecaDBDataSet.Autores' table. You can move, or remove it, as needed.
             this.autoresTableAdapter.Fill(this.sistemaBibliotecaDBDataSet.Autores);
 
+        }
+
+        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var autorSelect = ((System.Data.DataRowView)
+                this.dataGridView1.Rows[e.RowIndex].DataBoundItem).Row
+                as MVCProject.SistemaBibliotecaDBDataSet.AutoresRow;
+
+            switch (e.ColumnIndex) 
+            {
+                
+                case 0:
+                    {
+                        this.autoresTableAdapter.DeleteQuery(autorSelect.Id);
+                    }
+                    break;
+                case 1:
+                    {
+                        frmEditarAutores editAutor = new frmEditarAutores();
+                        editAutor.AutoresRow = autorSelect;
+                        editAutor.ShowDialog();
+                        
+                        this.autoresTableAdapter.UpdateQuery(
+                            editAutor.AutoresRow.Nome,
+                            editAutor.AutoresRow.Descricao,
+                            editAutor.AutoresRow.Id);
+
+                    }
+                    break;
+            }
+            this.autoresTableAdapter.CustomQuery(this.sistemaBibliotecaDBDataSet.Autores);
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            frmAdicionarAutores formAutores = new frmAdicionarAutores();
+            formAutores.ShowDialog();
+           
+            if (!string.IsNullOrEmpty(formAutores.autorRow?.Nome)) //se é uma string nula ou vazia não adiciona, também permite fechar a janela de adicionar sem dar erro
+                this.autoresTableAdapter.Insert(
+                formAutores.autorRow.Nome,
+                formAutores.autorRow.Descricao              
+                );
+           
+            this.autoresTableAdapter.Fill(this.sistemaBibliotecaDBDataSet.Autores);
         }
     }
 }

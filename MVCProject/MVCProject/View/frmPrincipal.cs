@@ -19,32 +19,38 @@ namespace MVCProject.View
 
         private void UsuáriosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            frmUsuarios formUsuarios = new frmUsuarios();
+            formUsuarios.ShowDialog();
         }
 
         private void AutorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            frmAutores formAutores = new frmAutores();
+            formAutores.ShowDialog();
         }
 
         private void GToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            frmGeneros formGeneros = new frmGeneros();
+            formGeneros.ShowDialog();
         }
 
         private void LivrosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            frmLivros formLivros = new frmLivros();
+            formLivros.ShowDialog();
         }
 
         private void LocaçãoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            frmLocacoes formLocacoes = new frmLocacoes();
+            formLocacoes.ShowDialog();
         }
 
         private void EditorasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            frmEditoras formEditoras = new frmEditoras();
+            formEditoras.ShowDialog();
         }
     }
 }
