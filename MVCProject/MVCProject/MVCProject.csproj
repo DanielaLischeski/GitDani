@@ -60,6 +60,7 @@
     <Compile Include="Model\Livro.cs" />
     <Compile Include="Model\LivroAutor.cs" />
     <Compile Include="Model\Locacao.cs" />
+    <Compile Include="Model\Session.cs" />
     <Compile Include="Model\Usuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

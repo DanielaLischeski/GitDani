@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MVCProject.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,9 @@ namespace MVCProject.View
         public frmPrincipal()
         {
             InitializeComponent();
+
+            if (Session.user == null)                              //Excessão customizada: 
+                throw new Exception("Erro de crítido do sistema");//caso o usuário comnsiga entrar na marra, ele cai aqui
         }
 
         private void UsuáriosToolStripMenuItem_Click(object sender, EventArgs e)

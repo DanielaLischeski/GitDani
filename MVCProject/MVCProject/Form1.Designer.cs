@@ -59,6 +59,7 @@
             this.textBox2.PasswordChar = '*';
             this.textBox2.Size = new System.Drawing.Size(302, 22);
             this.textBox2.TabIndex = 7;
+            this.textBox2.UseSystemPasswordChar = true;
             // 
             // textBox1
             // 

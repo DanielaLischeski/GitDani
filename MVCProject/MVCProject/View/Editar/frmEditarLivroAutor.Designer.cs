@@ -34,8 +34,8 @@
             this.livroAutorTableAdapter = new MVCProject.SistemaBibliotecaDBDataSetTableAdapters.LivroAutorTableAdapter();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.autoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             this.autoresTableAdapter = new MVCProject.SistemaBibliotecaDBDataSetTableAdapters.AutoresTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.livroAutorBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sistemaBibliotecaDBDataSet)).BeginInit();
@@ -76,6 +76,11 @@
             this.comboBox1.TabIndex = 1;
             this.comboBox1.ValueMember = "Id";
             // 
+            // autoresBindingSource
+            // 
+            this.autoresBindingSource.DataMember = "Autores";
+            this.autoresBindingSource.DataSource = this.sistemaBibliotecaDBDataSet;
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(34, 100);
@@ -85,11 +90,6 @@
             this.button1.Text = "Salvar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click_1);
-            // 
-            // autoresBindingSource
-            // 
-            this.autoresBindingSource.DataMember = "Autores";
-            this.autoresBindingSource.DataSource = this.sistemaBibliotecaDBDataSet;
             // 
             // autoresTableAdapter
             // 
