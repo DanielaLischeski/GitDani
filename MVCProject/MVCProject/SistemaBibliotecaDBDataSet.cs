@@ -4,6 +4,9 @@
 
     partial class SistemaBibliotecaDBDataSet
     {
+        partial class AutoresDataTable
+        {
+        }
     }
 }
 

@@ -41,8 +41,8 @@ namespace MVCProject.View.Adicionar
                 Editora = (int)comboBox2.SelectedValue,
                 Sinopse = textBox4.Text,
                 Observacoes = textBox5.Text,
-                UsuInc = Form1.UsuarioLogado,
-                UsuAlt = Form1.UsuarioLogado
+                UsuInc = Session.user.Id,
+                UsuAlt = Session.user.Id
             };
             this.Close();
         }

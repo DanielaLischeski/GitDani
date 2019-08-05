@@ -24,7 +24,7 @@ namespace MVCProject
 
         private void Button1_Click(object sender, EventArgs e)
         {
-
+            //tinha tentado fazer em casa o login:
             //this.usuariosTableAdapter.Fill(this.sistemaBibliotecaDBDataSet.Usuarios);
 
             //UsuarioLogado = Id que for adicionado

@@ -37,8 +37,8 @@ namespace MVCProject.View.Adicionar
                 Usuario = (int)comboBox2.SelectedValue,
                 Tipo = (int)numericUpDown1.Value,
                 Devolucao = dateTimePicker1.Value,
-                UsuInc = Form1.UsuarioLogado,
-                UsuAlt = Form1.UsuarioLogado
+                UsuInc = Session.user.Id,
+                UsuAlt = Session.user.Id
             };
             this.Close();
         }
