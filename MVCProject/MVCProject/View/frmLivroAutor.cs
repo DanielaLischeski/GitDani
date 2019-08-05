@@ -19,6 +19,7 @@ namespace MVCProject.View
             InitializeComponent();
         }
 
+        //quem chamar o frmLivroAutor deverá informar o Id do livro atual
         public int IdLivro;
 
         private void FrmLivroAutor_Load(object sender, EventArgs e)
@@ -28,7 +29,7 @@ namespace MVCProject.View
 
         }
 
-
+        //são variáveis de controle para atualização, para saber qual registro será atualizado
         private int AutorOriginal;
 
         private int LivroOriginal;
@@ -44,7 +45,7 @@ namespace MVCProject.View
             {
 
                 case 0:
-                    {
+                    {   //a chave(PK) pra deletar é composta por dois campos: Livro e Autor
                         this.livroAutorTableAdapter.DeleteQuery(livroAutorSelect.Livro, livroAutorSelect.Autor);
                     }
                     break;
@@ -52,14 +53,14 @@ namespace MVCProject.View
                     {
                         frmEditarLivroAutor editLivroAutor = new frmEditarLivroAutor();
                         editLivroAutor.LivroAutorRow = livroAutorSelect;
-                        AutorOriginal = editLivroAutor.LivroAutorRow.Autor;
+                        AutorOriginal = editLivroAutor.LivroAutorRow.Autor;//salva o autor e o livro antes de editar
                         LivroOriginal = editLivroAutor.LivroAutorRow.Livro;
                         editLivroAutor.ShowDialog();
 
                         this.livroAutorTableAdapter.UpdateQuery(
                             editLivroAutor.LivroAutorRow.Autor,
                             editLivroAutor.LivroAutorRow.Livro,
-                            AutorOriginal,
+                            AutorOriginal,//são os valores originais para localizar o vínculo a ser alterado
                             LivroOriginal);                       
 
                     }
@@ -72,7 +73,7 @@ namespace MVCProject.View
         private void Button1_Click(object sender, EventArgs e)
         {
             frmAdicionarLivroAutor formLivroAutor = new frmAdicionarLivroAutor();
-            formLivroAutor.IdLivro = IdLivro;
+            formLivroAutor.IdLivro = IdLivro;//passa pro frmAdicionarLivroAutor o código do livro atual
             formLivroAutor.ShowDialog();
 
             if (!string.IsNullOrEmpty(formLivroAutor.livroautorRow?.Autor.ToString()))

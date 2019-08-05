@@ -51,7 +51,7 @@ namespace MVCProject.View.Editar
         private void Button2_Click(object sender, EventArgs e)
         {
             frmLivroAutor formLivroAutor = new frmLivroAutor();
-            formLivroAutor.IdLivro = LivrosRow.Id;
+            formLivroAutor.IdLivro = LivrosRow.Id;//passa pro LivroAutor o livro atual
             formLivroAutor.ShowDialog();
         }
     }

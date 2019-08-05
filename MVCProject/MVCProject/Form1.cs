@@ -28,13 +28,13 @@ namespace MVCProject
             this.usuariosTableAdapter.Fill(this.sistemaBibliotecaDBDataSet.Usuarios);
 
             //UsuarioLogado = Id que for adicionado
-            UsuarioLogado = 2;            
+            UsuarioLogado = 2; //           
             //UsuarioLogado = (int)this.usuariosTableAdapter.LoginQuery(this.sistemaBibliotecaDBDataSet.Usuarios, textBox1.Text, textBox2.Text);
             //se digitar usuario ou senha inválidos, retorna Id = 0, logo:
             if ((UsuarioLogado != 0) || ((textBox1.Text == "admin") && (textBox2.Text == "admin"))) {
                 //se Id diferente de zero OU usuário e senha admin, permite entrar no sistema
-                frmPrincipal formPrincipal = new frmPrincipal();
-                formPrincipal.ShowDialog();
+                frmPrincipal formPrincipal = new frmPrincipal();//
+                formPrincipal.ShowDialog();//
             }  else
             {
                 MessageBox.Show("Usuario ou senha inválidos");
