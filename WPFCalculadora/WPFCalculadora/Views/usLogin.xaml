@@ -1,0 +1,14 @@
+﻿<UserControl x:Class="WPFCalculadora.Views.usLogin"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WPFCalculadora.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Button Content="Entrar" Margin="185,300,153.6,45" Click="Button_Click"/>
+        <TextBox Name="tbxLogin" Margin="185,94,153.6,241" TextWrapping="Wrap" />
+        <TextBox Name="tbxSenha"  Margin="185,200,153.6,140" TextWrapping="Wrap"/>
+    </Grid>
+</UserControl>
