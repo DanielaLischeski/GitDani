@@ -22,7 +22,8 @@ namespace MVCProject.View
         private void FrmLivros_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'sistemaBibliotecaDBDataSet.Livros' table. You can move, or remove it, as needed.
-            this.livrosTableAdapter.Fill(this.sistemaBibliotecaDBDataSet.Livros);
+            this.livrosTableAdapter.NomesQuery(this.sistemaBibliotecaDBDataSet.Livros);          
+
 
         }
 
@@ -65,7 +66,8 @@ namespace MVCProject.View
                     }
                     break;
             }
-            this.livrosTableAdapter.CustomQuery(this.sistemaBibliotecaDBDataSet.Livros);
+            //this.livrosTableAdapter.CustomQuery(this.sistemaBibliotecaDBDataSet.Livros);
+            this.livrosTableAdapter.NomesQuery(this.sistemaBibliotecaDBDataSet.Livros);
 
         }
         private void Button1_Click(object sender, EventArgs e)
@@ -89,7 +91,8 @@ namespace MVCProject.View
                 DateTime.Now
                 );
 
-            this.livrosTableAdapter.Fill(this.sistemaBibliotecaDBDataSet.Livros);
+            //this.livrosTableAdapter.Fill(this.sistemaBibliotecaDBDataSet.Livros);
+            this.livrosTableAdapter.NomesQuery(this.sistemaBibliotecaDBDataSet.Livros);
 
         }
     }

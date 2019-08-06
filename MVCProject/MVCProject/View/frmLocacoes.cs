@@ -22,7 +22,7 @@ namespace MVCProject.View
         private void FrmLocações_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'sistemaBibliotecaDBDataSet.Locacao' table. You can move, or remove it, as needed.
-            this.locacaoTableAdapter.Fill(this.sistemaBibliotecaDBDataSet.Locacao);
+            this.locacaoTableAdapter.NomesQuery(this.sistemaBibliotecaDBDataSet.Locacao);
 
         }
 
@@ -61,7 +61,8 @@ namespace MVCProject.View
                     }
                     break;
             }
-            this.locacaoTableAdapter.CustomQuery(this.sistemaBibliotecaDBDataSet.Locacao);
+            //this.locacaoTableAdapter.CustomQuery(this.sistemaBibliotecaDBDataSet.Locacao);
+            this.locacaoTableAdapter.NomesQuery(this.sistemaBibliotecaDBDataSet.Locacao);
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -82,7 +83,8 @@ namespace MVCProject.View
                 DateTime.Now
                 );
 
-            this.locacaoTableAdapter.Fill(this.sistemaBibliotecaDBDataSet.Locacao);
+            //this.locacaoTableAdapter.Fill(this.sistemaBibliotecaDBDataSet.Locacao);
+            this.locacaoTableAdapter.NomesQuery(this.sistemaBibliotecaDBDataSet.Locacao);
         }
     }
 }

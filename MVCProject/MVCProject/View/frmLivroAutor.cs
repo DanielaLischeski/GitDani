@@ -25,7 +25,7 @@ namespace MVCProject.View
         private void FrmLivroAutor_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'sistemaBibliotecaDBDataSet.LivroAutor' table. You can move, or remove it, as needed.
-            this.livroAutorTableAdapter.Fill(this.sistemaBibliotecaDBDataSet.LivroAutor);
+            this.livroAutorTableAdapter.NomesQuery(this.sistemaBibliotecaDBDataSet.LivroAutor);
 
         }
 
@@ -66,7 +66,8 @@ namespace MVCProject.View
                     }
                     break;
             }
-            this.livroAutorTableAdapter.CustomQuery(this.sistemaBibliotecaDBDataSet.LivroAutor);
+            //this.livroAutorTableAdapter.CustomQuery(this.sistemaBibliotecaDBDataSet.LivroAutor);
+            this.livroAutorTableAdapter.NomesQuery(this.sistemaBibliotecaDBDataSet.LivroAutor);
 
         }
 
@@ -82,7 +83,8 @@ namespace MVCProject.View
                 formLivroAutor.livroautorRow.Autor          
                 );
 
-            this.livroAutorTableAdapter.Fill(this.sistemaBibliotecaDBDataSet.LivroAutor);
+            //this.livroAutorTableAdapter.Fill(this.sistemaBibliotecaDBDataSet.LivroAutor);
+            this.livroAutorTableAdapter.NomesQuery(this.sistemaBibliotecaDBDataSet.LivroAutor);
         }
     }
 }
