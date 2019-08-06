@@ -37,15 +37,10 @@ namespace MVCProject.View
                 
                 case 0:
                     {
-                        this.autoresTableAdapter.DeleteQuery(autorSelect.Id);
-                    }
-                    break;
-                case 1:
-                    {
                         frmEditarAutores editAutor = new frmEditarAutores();
                         editAutor.AutoresRow = autorSelect;
                         editAutor.ShowDialog();
-                        
+
                         this.autoresTableAdapter.UpdateQuery(
                             editAutor.AutoresRow.Nome,
                             editAutor.AutoresRow.Descricao,
@@ -53,6 +48,7 @@ namespace MVCProject.View
 
                     }
                     break;
+              
             }
             this.autoresTableAdapter.CustomQuery(this.sistemaBibliotecaDBDataSet.Autores);
         }

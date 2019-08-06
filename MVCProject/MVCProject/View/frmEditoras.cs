@@ -37,11 +37,6 @@ namespace MVCProject.View
 
                 case 0:
                     {
-                        this.editorasTableAdapter.DeleteQuery(editoraSelect.Id);
-                    }
-                    break;
-                case 1:
-                    {
                         frmEditarEditoras editEditora = new frmEditarEditoras();
                         editEditora.EditorasRow = editoraSelect;
                         editEditora.ShowDialog();
@@ -50,9 +45,9 @@ namespace MVCProject.View
                             editEditora.EditorasRow.Nome,
                             editEditora.EditorasRow.Descricao,
                             editEditora.EditorasRow.Id);
-
                     }
                     break;
+             
             }
             this.editorasTableAdapter.CustomQuery(this.sistemaBibliotecaDBDataSet.Editoras);
         }

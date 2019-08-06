@@ -33,6 +33,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.Deletar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Livro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Autor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.livroAutorBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -52,6 +54,8 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Deletar,
             this.Editar,
+            this.Livro,
+            this.Autor,
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2});
             this.dataGridView1.DataSource = this.livroAutorBindingSource;
@@ -91,6 +95,24 @@
             this.Editar.Name = "Editar";
             this.Editar.ReadOnly = true;
             this.Editar.Width = 125;
+            // 
+            // Livro
+            // 
+            this.Livro.DataPropertyName = "Livro";
+            this.Livro.HeaderText = "Livro";
+            this.Livro.MinimumWidth = 6;
+            this.Livro.Name = "Livro";
+            this.Livro.ReadOnly = true;
+            this.Livro.Width = 125;
+            // 
+            // Autor
+            // 
+            this.Autor.DataPropertyName = "Autor";
+            this.Autor.HeaderText = "Autor";
+            this.Autor.MinimumWidth = 6;
+            this.Autor.Name = "Autor";
+            this.Autor.ReadOnly = true;
+            this.Autor.Width = 125;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -150,6 +172,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewButtonColumn Deletar;
         private System.Windows.Forms.DataGridViewButtonColumn Editar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Livro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Autor;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
     }

@@ -30,15 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Deletar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descricaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.editorasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sistemaBibliotecaDBDataSet = new MVCProject.SistemaBibliotecaDBDataSet();
             this.button1 = new System.Windows.Forms.Button();
             this.editorasTableAdapter = new MVCProject.SistemaBibliotecaDBDataSetTableAdapters.EditorasTableAdapter();
+            this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descricaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.editorasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sistemaBibliotecaDBDataSet)).BeginInit();
@@ -51,7 +50,6 @@
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Deletar,
             this.Editar,
             this.idDataGridViewTextBoxColumn,
             this.nomeDataGridViewTextBoxColumn,
@@ -66,14 +64,29 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
             // 
-            // Deletar
+            // editorasBindingSource
             // 
-            this.Deletar.DataPropertyName = "DeletCommand";
-            this.Deletar.HeaderText = "Deletar";
-            this.Deletar.MinimumWidth = 6;
-            this.Deletar.Name = "Deletar";
-            this.Deletar.ReadOnly = true;
-            this.Deletar.Width = 125;
+            this.editorasBindingSource.DataMember = "Editoras";
+            this.editorasBindingSource.DataSource = this.sistemaBibliotecaDBDataSet;
+            // 
+            // sistemaBibliotecaDBDataSet
+            // 
+            this.sistemaBibliotecaDBDataSet.DataSetName = "SistemaBibliotecaDBDataSet";
+            this.sistemaBibliotecaDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(1, 1);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(799, 76);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "ADICIONAR";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            // 
+            // editorasTableAdapter
+            // 
+            this.editorasTableAdapter.ClearBeforeFill = true;
             // 
             // Editar
             // 
@@ -111,30 +124,6 @@
             this.descricaoDataGridViewTextBoxColumn.ReadOnly = true;
             this.descricaoDataGridViewTextBoxColumn.Width = 125;
             // 
-            // editorasBindingSource
-            // 
-            this.editorasBindingSource.DataMember = "Editoras";
-            this.editorasBindingSource.DataSource = this.sistemaBibliotecaDBDataSet;
-            // 
-            // sistemaBibliotecaDBDataSet
-            // 
-            this.sistemaBibliotecaDBDataSet.DataSetName = "SistemaBibliotecaDBDataSet";
-            this.sistemaBibliotecaDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(1, 1);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(799, 76);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "ADICIONAR";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
-            // 
-            // editorasTableAdapter
-            // 
-            this.editorasTableAdapter.ClearBeforeFill = true;
-            // 
             // frmEditoras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -159,7 +148,6 @@
         private SistemaBibliotecaDBDataSet sistemaBibliotecaDBDataSet;
         private System.Windows.Forms.BindingSource editorasBindingSource;
         private SistemaBibliotecaDBDataSetTableAdapters.EditorasTableAdapter editorasTableAdapter;
-        private System.Windows.Forms.DataGridViewButtonColumn Deletar;
         private System.Windows.Forms.DataGridViewButtonColumn Editar;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
