@@ -6261,8 +6261,10 @@ SELECT Id, Tipo, Descricao FROM Generos WHERE (Id = @Id)";
             this._commandCollection[4].CommandText = @"SELECT LivroAutor.Livro, LivroAutor.Autor, Livros.Titulo AS 'Livros.Titulo', Autores.Nome AS 'Autores.Nome'
 FROM     LivroAutor INNER JOIN
                   Livros ON LivroAutor.Livro = Livros.Id INNER JOIN
-                  Autores ON LivroAutor.Autor = Autores.Id";
+                  Autores ON LivroAutor.Autor = Autores.Id
+WHERE LivroAutor.Livro = @LivroId";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LivroId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Livro", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
             this._commandCollection[5].CommandText = "UPDATE [dbo].[LivroAutor] SET [Autor] = @Autor, [Livro] = @Livro WHERE ([Autor] =" +
@@ -6352,8 +6354,9 @@ FROM     LivroAutor INNER JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int NomesQuery(SistemaBibliotecaDBDataSet.LivroAutorDataTable dataTable) {
+        public virtual int NomesQuery(SistemaBibliotecaDBDataSet.LivroAutorDataTable dataTable, int LivroId) {
             this.Adapter.SelectCommand = this.CommandCollection[4];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(LivroId));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -6365,8 +6368,9 @@ FROM     LivroAutor INNER JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual SistemaBibliotecaDBDataSet.LivroAutorDataTable GetDataBy4() {
+        public virtual SistemaBibliotecaDBDataSet.LivroAutorDataTable GetDataBy4(int LivroId) {
             this.Adapter.SelectCommand = this.CommandCollection[4];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(LivroId));
             SistemaBibliotecaDBDataSet.LivroAutorDataTable dataTable = new SistemaBibliotecaDBDataSet.LivroAutorDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
