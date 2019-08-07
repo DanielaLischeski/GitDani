@@ -28,7 +28,7 @@ namespace WPFCalculadora
         private void UcLoginForm_loginCorrect(object sender, EventArgs e)
         {
             ucCalcForm.Visibility = Visibility.Visible;
-            MessageBox.Show("Bem vindo!");
+            //MessageBox.Show("Bem vindo!");
         }
     }
 }

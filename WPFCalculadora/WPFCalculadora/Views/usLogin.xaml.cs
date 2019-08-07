@@ -36,11 +36,13 @@ namespace WPFCalculadora.Views
         {
             if (login == "admin" && senha == "admin")
             {
+                //Aqui apenas recebo uma informação no evento que logou.
                 this.Visibility = Visibility.Hidden;
                 logicCorrect(null, new EventArgs());
             }
             else
-                MessageBox.Show("Login inválido!");
+                //Aqui apenas recebo uma informação no evento que falhou o login.
+                MessageBox.Show("Login ou senha inválidos!");
         }
     }
 }
