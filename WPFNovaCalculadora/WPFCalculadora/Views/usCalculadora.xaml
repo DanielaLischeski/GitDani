@@ -6,7 +6,6 @@
              xmlns:local="clr-namespace:WPFCalculadora.Views"
              mc:Ignorable="d" Height="640" Width="405">
     <Grid Margin="0,0,-0.2,0" Background="{DynamicResource {x:Static SystemColors.WindowTextBrushKey}}">
-        <Button Content="CE" Margin="19,145,299,405" Width="Auto" BorderBrush="{DynamicResource {x:Static SystemColors.InfoTextBrushKey}}" FontWeight="Bold" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" FontSize="22" Click="Button_Click_16" />
         <Button Content="C" Margin="112,145,206,405" Width="Auto" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" BorderBrush="{DynamicResource {x:Static SystemColors.InfoTextBrushKey}}" FontWeight="Bold" FontSize="22" Click="Button_Click_10"/>
         <Button Content="=" Margin="298,145,20,405" Width="Auto" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" BorderBrush="{DynamicResource {x:Static SystemColors.InfoTextBrushKey}}" FontWeight="Bold" FontSize="22" Click="Button_Click_12" />
         <Button Content="7" Margin="19,242,299,308" Width="Auto" Background="{DynamicResource {x:Static SystemColors.GradientActiveCaptionBrushKey}}" BorderBrush="{DynamicResource {x:Static SystemColors.InfoTextBrushKey}}" FontWeight="Bold" FontSize="22" Click="Button_Click_7"/>

@@ -84,13 +84,7 @@ namespace WPFCalculadora.Views
             display.Text = "";           
             operacao = "";
         }
-
-        private void Button_Click_16(object sender, RoutedEventArgs e)
-        {
-            //botão CE
-            acumula = 0;
-            display.Text = "";
-        }
+           
 
         private void Button_Click_17(object sender, RoutedEventArgs e)
         {
@@ -125,7 +119,7 @@ namespace WPFCalculadora.Views
             else
             {
                 acumula = double.Parse(display.Text);
-                display.Text += "+";                
+                display.Text = "";                
                 operacao = "+";
             }
         }             
@@ -139,7 +133,7 @@ namespace WPFCalculadora.Views
             else
             {
                 acumula = double.Parse(display.Text);
-                display.Text += "-";                
+                display.Text = "";                
                 operacao = "-";
             }
         }
@@ -154,7 +148,7 @@ namespace WPFCalculadora.Views
             else
             {
                 acumula = double.Parse(display.Text);
-                display.Text += "*";               
+                display.Text = "";               
                 operacao = "*";
             }
 
@@ -163,6 +157,7 @@ namespace WPFCalculadora.Views
 
         private void Button_Click_15(object sender, RoutedEventArgs e)
         {
+            
             if (operacao == "*" || operacao == "+" || operacao == "-")
             {
                 
@@ -171,7 +166,7 @@ namespace WPFCalculadora.Views
             else
             {
                 acumula = double.Parse(display.Text);
-                display.Text += "/";           
+                display.Text = "";
                 operacao = "/";
             }
         }
@@ -185,27 +180,25 @@ namespace WPFCalculadora.Views
         {
             if (operacao == "+")
             {                
-                acumula += double.Parse(display.Text.Split('+')[1].ToString());
-                display.Text += "=" + acumula.ToString();
-                //acumula += double.Parse(display.Text);
-                //display.Text = acumula.ToString();
+                 acumula += double.Parse(display.Text);
+                 display.Text = acumula.ToString();
             }
             else if (operacao == "-")
             {
-                acumula -= double.Parse(display.Text.Split('-')[1].ToString());
-                display.Text += "=" + acumula.ToString();                
+                acumula -= double.Parse(display.Text);
+                display.Text = acumula.ToString();                
             }
             else if (operacao == "*")
             {
-                acumula *= double.Parse(display.Text.Split('*')[1].ToString());
-                display.Text += "=" + acumula.ToString();              
+                acumula *= double.Parse(display.Text);
+                display.Text = acumula.ToString();              
             }
             else if (operacao == "/")
             {
                 if (double.Parse(display.Text) != 0)
                 {
-                    acumula /= double.Parse(display.Text.Split('/')[1].ToString());
-                    display.Text += "=" + acumula.ToString();                   
+                    acumula /= double.Parse(display.Text);
+                    display.Text =  acumula.ToString();                   
                 }
                 else
                 {
