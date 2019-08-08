@@ -33,7 +33,7 @@ namespace WPFCadastroRegex.View
 
             //valida números: +554733332066 ou +55 473332066, etc, desde que tenha +
             
-            Regex rgFone = new Regex("^\\+(?:[0-9] ?){6,14}[0-9]$");
+            Regex rgFone = new Regex("^\\+(?:[0-9] ?){6,14}[0-9]$");      
             
             if (rgFone.IsMatch(testeTelefone))
             {
@@ -43,13 +43,12 @@ namespace WPFCadastroRegex.View
             {
                 MessageBox.Show("Telefone Inválido!");
             }
-
+            
 
             var testeEmail = tbxEmail.Text;
 
-            Regex rgEmail = new Regex(@"^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})$");
+            Regex rgEmail = new Regex(@"^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)$");
      
-
             if (rgEmail.IsMatch(testeEmail))
             {
                 MessageBox.Show("Email Valido!");
