@@ -30,6 +30,8 @@ namespace WPFCadastroRegex.View
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             var testeTelefone = tbxTelefone.Text;
+
+            //valida números: +554733332066 ou +55 473332066, etc, desde que tenha +
             
             Regex rgFone = new Regex("^\\+(?:[0-9] ?){6,14}[0-9]$");
             
