@@ -40,7 +40,11 @@ namespace WPFAppEntity.Views
 
         private void DtGridView_CellEditEnding(object sender, DataGridCellEditEndingEventArgs e)
         {
-           
+            var objectToEdit = ((DataGrid)sender).SelectedValue as Usuario;
+
+
+            //var objectToRemove = ((DataGrid)sender).SelectedValue as Usuario; //para remover um usuário
+            // context.Usuarios.Remove(objectToRemove);
         }
 
         private void BntSalvar_Click(object sender, RoutedEventArgs e)

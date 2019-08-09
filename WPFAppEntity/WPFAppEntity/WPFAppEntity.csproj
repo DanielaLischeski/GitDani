@@ -71,6 +71,9 @@
     <Compile Include="Data\Livro.cs" />
     <Compile Include="Data\Locacao.cs" />
     <Compile Include="Data\Usuario.cs" />
+    <Compile Include="Views\frmEditUser.xaml.cs">
+      <DependentUpon>frmEditUser.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ucControl.xaml.cs">
       <DependentUpon>ucControl.xaml</DependentUpon>
     </Compile>
@@ -89,6 +92,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\frmEditUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\ucControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
