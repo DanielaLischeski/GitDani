@@ -13,22 +13,31 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WPFCalculadora
+namespace WPFAppEntity
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        private void UcLoginForm_loginCorrect(object sender, EventArgs e)
+        private void UsControl_sucess(object sender, EventArgs e)
         {
-            ucCalcForm.Visibility = Visibility.Visible;
-            //MessageBox.Show("Bem vindo!");
+            MessageBox.Show(sender.ToString());
+            ucLoginForm.Visibility = Visibility.Hidden;
+            ucGridView.Visibility = Visibility.Visible;
         }
+
+        private void UsControl_fail(object sender, EventArgs e)
+        {
+            MessageBox.Show(sender.ToString());            
+        }
+
+    
     }
 }

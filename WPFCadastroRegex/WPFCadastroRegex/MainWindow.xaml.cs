@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WPFCalculadora
+namespace WPFCadastroRegex
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -25,10 +25,6 @@ namespace WPFCalculadora
             InitializeComponent();
         }
 
-        private void UcLoginForm_loginCorrect(object sender, EventArgs e)
-        {
-            ucCalcForm.Visibility = Visibility.Visible;
-            //MessageBox.Show("Bem vindo!");
-        }
+  
     }
 }

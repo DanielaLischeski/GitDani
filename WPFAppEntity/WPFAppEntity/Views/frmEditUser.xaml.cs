@@ -10,25 +10,30 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WPFAppEntity.Data;
 
-namespace WPFCalculadora
+namespace WPFAppEntity.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for frmEditUser.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class frmEditUser : Window
     {
-        public MainWindow()
+        public frmEditUser()
         {
             InitializeComponent();
         }
 
-        private void UcLoginForm_loginCorrect(object sender, EventArgs e)
+        public Usuario user;
+
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            ucCalcForm.Visibility = Visibility.Visible;
-            //MessageBox.Show("Bem vindo!");
+            user.Nome = tbxName.Text;
+            user.Login = tbxLogin.Text;
+            user.Senha = tbxLogin.Text;
+
+            this.DialogResult = true;
         }
     }
 }

@@ -12,8 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WPFAppNew.Data;
 
-namespace WPFCalculadora
+namespace WPFAppNew
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -25,10 +26,21 @@ namespace WPFCalculadora
             InitializeComponent();
         }
 
-        private void UcLoginForm_loginCorrect(object sender, EventArgs e)
+        public BibliotecaDBContext context;
+
+      
+        private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            ucCalcForm.Visibility = Visibility.Visible;
-            //MessageBox.Show("Bem vindo!");
+            context = new BibliotecaDBContext();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(context.Usuarios.OrderBy(x => x.Nome).FirstOrDefault(x => x.Id > 0).Nome);
+
+            var runList = context.Usuarios.OrderBy(x => x.Nome).ToList<Usuario>();
+
+            gridView1.ItemsSource = runList;
         }
     }
 }
