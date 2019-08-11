@@ -7,8 +7,10 @@ namespace EstudoInterfaceCarro
     {
         static void Main(string[] args)
         {
-            Carro uno = new Carro();
+            Carro uno = new Carro("Fiat");
             Carro agile = new Carro();
+
+            Console.WriteLine($"Fabricante padrão Uno: {uno.Fabricante}");
 
             uno.Fabricante = "Fiat";
             uno.Ano = "1991";
