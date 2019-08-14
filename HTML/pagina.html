@@ -1,0 +1,99 @@
+<html>
+<head>
+    <style>
+        /*CSS para classe específica*/
+        .buttonClass { /*o . significa classe*/
+            width: 100px;
+            height: 100px;
+        }
+
+        .circulosDeGiomar {
+            width: 10px;
+            height: 10px;
+            background-color: #000;
+            border: 1px solid #808080;
+            border-radius: 100%; /*100% fica redondo*/
+            position:absolute;
+        }
+        /*CSS para todas as tags input*/
+        input {
+            width: 500px;
+            height: 500px;
+            border-radius: 25%;
+        }
+        .screen {
+            width: 500px;
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div class="screen">
+        <div id="GilmarCirculos" incrementX="true" posleft="0" incrementY="true" postop="50" class="circulosDeGiomar"></div>
+    </div>
+    <div>
+        <label id="lblGiomarCirculosCount">Contador de circulos do giomar:{0}</label>
+    </div>
+    <div>
+        <input id="btnClickMe" class="buttonClass" type="button" value="Adiciona os círculos do giomar" onclick="CriarGiomar()" /> <!-- onclick="CriarGiomar();CriarGiomar()" pode colocar mais de uma função no mesmo botão-->
+    </div>
+    <script>
+        setInterval(Movimento, 10);
+
+        function Movimento() {
+            /*para obter todas as esferas dentro do nosso documento. */
+            var circulosGiomar = document.getElementsByClassName('circulosDeGiomar');
+
+            for (var i = 0; i < circulosGiomar.length; i++) {
+            /*parte que movimenta os círculos*/
+                MovimentX(circulosGiomar[i])
+            }   
+        }
+
+        function MovimentX(object) {
+            /*obter o valor do left*/
+            var posLeft = object.getAttribute("posleft");
+            var posTop = object.getAttribute("postop");
+            /*obter se o mesmo pode incrementar */
+            var incrementX = object.getAttribute("incrementX");
+            var incrementY = object.getAttribute("incrementY");
+            /*obter ID do elemento específico */
+            var idElement = object.getAttribute("id");
+
+            if (posLeft < 500 && incrementX === "true") {
+                object.style.left = (posLeft++).toString() + "px";
+            } else {
+                object.style.left = (posLeft--).toString() + "px";
+                incrementX = false;
+                if (posLeft <= 0)
+                    incrementX = true;
+            }
+
+            document.getElementById(idElement).setAttribute("incrementX", incrementX);
+            document.getElementById(idElement).setAttribute("posleft", posLeft);
+
+            if (posTop < 500 && incrementY === "true") {
+                object.style.top = (posTop++).toString() + "px";
+            } else {
+                object.style.top = (posTop--).toString() + "px";
+                incrementY = false;
+                if (posTop <= 0)
+                    incrementY = true;
+            }
+
+            document.getElementById(idElement).setAttribute("incrementY", incrementY);
+            document.getElementById(idElement).setAttribute("postop", posTop);
+           
+        }
+
+        function CriarGiomar() {
+            var elementDoc = document.getElementsByClassName('screen')[0];
+            var elementLbl = document.getElementById('lblGiomarCirculosCount');
+            var circulosGiomar = document.getElementsByClassName('circulosDeGiomar').length;
+
+            elementDoc.innerHTML += "<div id=" + circulosGiomar + " incrementX=\"true\" posleft=\"0\" incrementY=\"true\"  postop=\"50\" class=\"circulosDeGiomar\"></div>"                 
+            elementLbl.innerHTML = "Contador de círculos do Giomar: " + circulosGiomar;
+        }
+    </script>
+</body>
+</html> <!--deixar os conteúdos pesados sempre pro final, após html-->
