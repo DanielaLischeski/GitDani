@@ -749,10 +749,10 @@
 
     <div>
         <div>
-            Faça login no sistema
+            Faï¿½a login no sistema
         </div>
         <!--<div>
-        <input id="idUsuario" type="text" placeholder="Nome do usuário" name="usuario">
+        <input id="idUsuario" type="text" placeholder="Nome do usuï¿½rio" name="usuario">
         <br />
         <input id="idSenha" type="password" placeholder="Senha" name="senha">
         <button type="button" id="btnAumentar" onclick="Aumentar()">Aumentar</button>
@@ -824,7 +824,7 @@
             }];
 
         function Pesquisar() {
-            usuarioInvalido = true; // variavel para controlar se o usuario digitado é inválido, começa sempre como "true" pois ainda nao foi procurado o usuario e senha em bar.data
+            usuarioInvalido = true; // variavel para controlar se o usuario digitado ï¿½ invï¿½lido, comeï¿½a sempre como "true" pois ainda nao foi procurado o usuario e senha em bar.data
             $.each(bar.data,
                 function (index, object) {
                     var contentVal = $('#idUsuario').val();
@@ -832,12 +832,12 @@
 
                     if (object.Nome === contentVal && object.Senha === contentSenha) {
                         alert('Usuario e senha validos');
-                        usuarioInvalido = false; // se achou um usuario valido, da a mensagem em tela, e marca a variável usuarioInvalido como "false"
+                        usuarioInvalido = false; // se achou um usuario valido, da a mensagem em tela, e marca a variï¿½vel usuarioInvalido como "false"
                     }
 
                 });
-            // depois de percorrer todos os usuarios cadastrados, verifica se o usuario é invalido. Isso e controlado atravez da variável usuarioInvalido, se ela estiver "true" entao
-            // o usuario é inválido, se estiver "false", quer dizer que foi localizado um usuário
+            // depois de percorrer todos os usuarios cadastrados, verifica se o usuario ï¿½ invalido. Isso e controlado atravez da variï¿½vel usuarioInvalido, se ela estiver "true" entao
+            // o usuario ï¿½ invï¿½lido, se estiver "false", quer dizer que foi localizado um usuï¿½rio
             if (usuarioInvalido === true) {
                 alert('Usuario ou senha invalidos');
             }

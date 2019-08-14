@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/bootstrap-grid.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12" style="background-color:#2e4999;text-align:center;padding:5px;">
+                <input id="Button1" class="col-6" type="button" value="Pesquisar" style="font-weight:bold;color:darkblue" /> <!--class="col-6" faz o botão ocupar metade do espaço disponível-->
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6" style="background-color:#5a68d7;text-align:right;padding:5px;">
+                <label for="Cep">CEP:</label>
+            </div>
+            <div class="col-6" style="background-color:#5a68d7;padding:5px;">
+                <input type="text" id="Cep" placeholder="Text content" />
+            </div>
+
+            <div class="col-6" style="background-color:#5a68d7;text-align:right;padding:5px;">
+                <label for="Rua">Rua:</label>
+            </div>
+            <div class="col-6" style="background-color:#5a68d7;padding:5px;">
+                <input type="text" id="Rua" placeholder="Text content" />
+            </div>
+
+            <div class="col-6" style="background-color:#5a68d7;text-align:right;padding:5px;">
+                <label for="Bairro">Bairro:</label>
+            </div>
+            <div class="col-6" style="background-color:#5a68d7;padding:5px;">
+                <input type="text" id="Bairro" placeholder="Text content" />
+            </div>
+
+            <div class="col-6" style="background-color:#5a68d7;text-align:right;padding:5px;">
+                <label for="Cidade">Cidade:</label>
+            </div>
+            <div class="col-6" style="background-color:#5a68d7;padding:5px;">
+                <input type="text" id="Cidade" placeholder="Text content" />
+            </div>
+
+            <div class="col-6" style="background-color:#5a68d7;text-align:right;padding:5px;">
+                <label for="Estado">Estado:</label>
+            </div>
+            <div class="col-6" style="background-color:#5a68d7;padding:5px;">
+                <input type="text" id="Estado" placeholder="Text content" />
+            </div>
+        </div>
+    </div>
+
+    <script src="Scripts/bootstrap.bundle.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+    <script src="Scripts/jquery-3.4.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#Button1').click(function () {
+
+                function limpa_formulário_cep() {
+                    // Limpa valores do formulário de cep.
+                    $("#Rua").val("");
+                    $("#Bairro").val("");
+                    $("#Cidade").val("");
+                    $("#Estado").val("");
+
+                }
+
+                //Quando o campo cep perde o foco.
+                $("#Cep").blur(function () {
+
+                    //Nova variável "cep" somente com dígitos.
+                    var cep = $(this).val().replace(/\D/g, '');
+
+                    //Verifica se campo cep possui valor informado.
+                    if (cep != "") {
+
+                        //Expressão regular para validar o CEP.
+                        var validacep = /^[0-9]{8}$/;
+
+                        //Valida o formato do CEP.
+                        if (validacep.test(cep)) {
+
+                            //Preenche os campos com "..." enquanto consulta webservice.
+                            $("#Rua").val("...");
+                            $("#Bairro").val("...");
+                            $("#Cidade").val("...");
+                            $("#Estado").val("...");
+
+
+                            //Consulta o webservice viacep.com.br/
+                            $.getJSON("https://viacep.com.br/ws/" + cep + "/json/?callback=?", function (dados) {
+
+                                if (!("erro" in dados)) {
+                                    //Atualiza os campos com os valores da consulta.
+                                    $("#Rua").val(dados.logradouro);
+                                    $("#Bairro").val(dados.bairro);
+                                    $("#Cidade").val(dados.localidade);
+                                    $("#Estado").val(dados.uf);
+
+                                } //end if.
+                                else {
+                                    //CEP pesquisado não foi encontrado.
+                                    limpa_formulário_cep();
+                                    alert("CEP não encontrado.");
+                                }
+                            });
+                        } //end if.
+                        else {
+                            //cep é inválido.
+                            limpa_formulário_cep();
+                            alert("Formato de CEP inválido.");
+                        }
+                    } //end if.
+                    else {
+                        //cep sem valor, limpa formulário.
+                        limpa_formulário_cep();
+                    }
+                });
+            });
+        });
+
+
+        /* $(document).ready(function () {
+             $('#Button1').click(function () {
+                 $.get("https://viacep.com.br/ws/38402100/json/", function (data, status) {
+                     alert("Data: " + data + "\nStatus: " + status);
+                     ('#Rua').val("");
+                 });
+             });
+         });*/
+
+
+    </script>
+</body>
+</html>

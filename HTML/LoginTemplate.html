@@ -276,22 +276,22 @@
             }];
 
         function Pesquisar() {
-            usuarioInvalido = true; // variavel para controlar se o usuario digitado é inváldo, começa sempre como "true" pois ainda nao foi procurado o usuario e senha em bar.data
+            usuarioInvalido = true; // variavel para controlar se o usuario digitado ï¿½ invï¿½ldo, comeï¿½a sempre como "true" pois ainda nao foi procurado o usuario e senha em bar.data
             $.each(bar.data,
                 function (index, object) {
                     var contentVal = $('#idUsuario').val();
                     var contentSenha = $('#idSenha').val();
 
                     if (object.Nome === contentVal && object.Senha === contentSenha) {
-                        alert('Usuário e senha válidos');
-                        usuarioInvalido = false; // se achou um usuario valido, da a mensagem em tela, e marca a variável usuarioInvalido como "false"
+                        alert('Usuï¿½rio e senha vï¿½lidos');
+                        usuarioInvalido = false; // se achou um usuario valido, da a mensagem em tela, e marca a variï¿½vel usuarioInvalido como "false"
                     }
 
                 });
-            // depois de percorrer todos os usuarios cadastrados, verifica se o usuario é invalido. Isso e controlado atravez da variável usuarioInvalido, se ela estiver "true" entao
-            // o usuario é inválido, se estiver "false", quer dizer que foi localizado um usuário
+            // depois de percorrer todos os usuarios cadastrados, verifica se o usuario ï¿½ invalido. Isso e controlado atravez da variï¿½vel usuarioInvalido, se ela estiver "true" entao
+            // o usuario ï¿½ invï¿½lido, se estiver "false", quer dizer que foi localizado um usuï¿½rio
             if (usuarioInvalido === true) {
-                alert('Usuário ou senha inválidos');
+                alert('Usuï¿½rio ou senha invï¿½lidos');
             }
         }
 
