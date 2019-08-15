@@ -57,7 +57,7 @@
     <script src="Scripts/jquery-3.4.1.js"></script>
     <script>
         $(document).ready(function () {
-            $('#Button1').click(function () {
+            //$('#Button1').click(function () {
 
                 function limpa_formulário_cep() {
                     // Limpa valores do formulário de cep.
@@ -69,10 +69,10 @@
                 }
 
                 //Quando o campo cep perde o foco.
-                $("#Cep").blur(function () {
+                $("#Button1").click(function () {
 
                     //Nova variável "cep" somente com dígitos.
-                    var cep = $(this).val().replace(/\D/g, '');
+                    var cep = $('#Cep').val().replace(/\D/g, '');//expressão regular para ignorar caracteres alfanuméricos, ele pega só os números
 
                     //Verifica se campo cep possui valor informado.
                     if (cep != "") {
@@ -81,7 +81,7 @@
                         var validacep = /^[0-9]{8}$/;
 
                         //Valida o formato do CEP.
-                        if (validacep.test(cep)) {
+                        if (validacep.test(cep)) { //depois de já ignorar letras e caracteres especiais, joga o valor do cep aqui e tenta validar
 
                             //Preenche os campos com "..." enquanto consulta webservice.
                             $("#Rua").val("...");
@@ -119,7 +119,7 @@
                         limpa_formulário_cep();
                     }
                 });
-            });
+            //});
         });
 
 
