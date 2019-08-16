@@ -1,0 +1,72 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Projeto Web Api</title>
+    <link href="css/prettify.css" rel="stylesheet">
+    <link href="css/hemisu-light.css" rel="stylesheet">
+    <link href="css/screen.css" rel="stylesheet" media="screen">
+    <link href="css/classic.css" rel="stylesheet" media="screen">
+</head>
+<body>   
+    <form id="saveContactForm" method="post" />
+    <input type="text" name="Id" placeholder="text content" />
+    <input type="text" name="Ativo" placeholder="text content" />
+    <input type="text" name="UsuInc" placeholder="text content" />
+    <input type="text" name="UsuAlt" placeholder="text content" />
+    <input type="text" name="DatInc" placeholder="text content" />
+    <input type="text" name="DatAlt" placeholder="text content" />
+
+    <input type="submit" value="Salvar" />
+
+    <!--<div>
+        <form id="formUsu" method="post">
+            <input type="text" name="tbxusuario" placeholder="Informar o nome do usuário." />
+            <input type="submit" value="Salvar" />
+        </form>
+    </div>-->
+
+    <div id="exemplo">
+
+    </div>
+
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!--jquery.columns.min.js-->
+    <script type="text/javascript"
+            src="jquery.columns.min.js"></script>
+
+    <script>
+        /* JSON.stringify($('#formUsu').serializeArray()) */
+        /*function CadastraUsuario() {
+            $.ajax({
+                type: 'POST',
+                url: 'http://localhost:57382/Api/Usuarios',
+                data: JSON.stringify($('#formUsu').serializeArray()),
+                contentType: 'application/json; charset=utf-8',
+                dataType: 'json'
+            });
+        }*/
+
+        $('#saveContact').click(function ()
+        {
+            $.post("http://localhost:57382/Api/Usuarios",
+                $("#saveContactForm").serialize(),
+                function (value) {
+                    GridRefresh();
+                }, "json");
+                       
+        }
+        
+        function GridRefresh() {
+            $.get('http://localhost:57382/Api/Usuarios', function (dataApi) {
+                //alert(data);
+                $('#gridContent').html("<div id=\"exemplo\"></div>");
+                $('#exemplo').columns({ data: dataApi });
+            });
+        }
+    </script>
+</body>
+</html>
+
