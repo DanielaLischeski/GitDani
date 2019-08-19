@@ -1,29 +1,30 @@
-	GetMethod(null);
 
     /* Ao carregar o documento o mesmo inicia o conteudo desde script*/
-  	jQuery(document).ready(function(){
+    jQuery(document).ready(function(){		
 		
-		jQuery('#bntCancelar').click(function(){		
+		jQuery('#bntCancelar').click(function(){			
 			$('#bntCancelar').hide();
 			
 			$('#Id').val("");
-			$('#Nome').val("");
-			$('#Login').val("");
-			$('#Email').val("");
-			$('#Senha').val("");
+			$('#Livro').val("");
+            $('#Usuario').val("");	
+            $('#Tipo').val("");
+            $('#Devolucao').val("");		
 			$('#Ativo select').val("true");
 		});
+		
+		GetMethod(null);
 	});
 	
 	function GetByID(id){
-        // $('#bntSubmit').hide();
+        //$('#bntSubmit').hide();
 		//$('#bntSalvar').show();
 		$('#bntCancelar').show();
 		
         var settings = {
 			"async": true,
 			"crossDomain": true,
-			"url": "http://localhost:59271/Api/Usuarios/"+id,
+			"url": "http://localhost:59271/Api/Locacao/"+id,
 			"method": "GET",
 				"headers": {
 					"Content-Type": "application/json",
@@ -33,20 +34,36 @@
 	
 			$.ajax(settings).done(function (response) {
 				$('#Id').val(response.Id);
-				$('#Nome').val(response.Nome);
-				$('#Login').val(response.Login);
-				$('#Senha').val(response.Senha);
-				$('#Email').val(response.Email);
+				$('#Livro').val(response.Livro);
+                $('#Usuario').val(response.Usuario);	
+                $('#Tipo').val(response.Tipo);	
+                $('#Devolucao').val(response.Devolucao);	
 				$('#Ativo select').val(response.Ativo);
 			});
 		
-	}		
+	}	
+	
+	function Deleting(id){
+			 var settings = {
+			  "crossDomain": true,
+			  "url": "http://localhost:59271/Api/Locacao/"+id,
+			  "method": "DELETE",
+			  "headers": {
+				"Content-Type": "application/x-www-form-urlencoded",
+				"Accept": "*/*"
+			  }
+			}
+
+			$.ajax(settings).done(function (response) {
+			    GetMethod(null);
+			});
+	}
     
     function GetMethod(object){
 			var settings = {
 				"async": true,
 				"crossDomain": true,
-				"url": "http://localhost:59271/Api/Usuarios",
+				"url": "http://localhost:59271/Api/Locacao",
 				"method": "GET",
 				"headers": {
 					"Content-Type": "application/json",
@@ -66,9 +83,10 @@
 	   $('#tDataGrid').html(  '<tbody>'
 							+ 	'<tr>'
 							+ 		'<th>ID</th>'
-							+ 		'<th>Nome</th>'
-							+ 		'<th>Login</th>'
-							+ 		'<th>E-mail</th>'
+							+ 		'<th>Livro</th>'
+							+ 		'<th>Usuario</th>' 	
+							+ 		'<th>Tipo</th>' 	
+							+ 		'<th>Devolucao</th>' 		
 							+ 		'<th>Ativo</th>'
 							+ 		'<th>Opções</th>'
 							+ 	'</tr>'
@@ -76,15 +94,16 @@
 
 		$.each(contentValue,function(index,value) {
         var row =     '<tr>'
-						+ '<td>' + value.Id       + '</td>'
-						+ '<td>' + value.Nome    + '</td>'
-						+ '<td>' + value.Login    + '</td>'
-						+ '<td>' + value.Email    + '</td>'
-						+ '<td>' + value.Ativo    + '</td>'
+						+ '<td>' + value.Id        + '</td>'
+						+ '<td>' + value.Livro      + '</td>'
+						+ '<td>' + value.Usuario + '</td>'		
+						+ '<td>' + value.Tipo + '</td>'	
+						+ '<td>' + value.Devolucao + '</td>'					
+						+ '<td>' + value.Ativo     + '</td>'
 						+ '<td>' 
 						+ 	'<div    class=\'col-md-12\' style=\'float: right;\'>'
 						+ 		'<div    class=\'col-md-6\'>'
-						+ 			'<button class=\'btn btn-block btn-danger col-md-3 btn-delet-event\' type=\'button\' send-post=\'Usuarios\' value=\''+ value.Id +'\'>Remover</button>'
+						+ 			'<button class=\'btn btn-block btn-danger col-md-3 ajax\' type=\'button\'  onclick=\'Deleting('+ value.Id +')\'>Remover</button>'
 						+ 		'</div>'
 						+ 		'<div     class=\'col-md-6\'>'
 						+ 			'<button  class=\'btn btn-block btn-success col-md-3\'    type=\'button\'  onclick=\'GetByID('+ value.Id +')\'\>Editar</button>'
@@ -94,8 +113,6 @@
 					+ '</tr>';
         $('#tDataGrid').append(row);
 		});
-
-		SetGridClickEvents();
     }
 	
 	
