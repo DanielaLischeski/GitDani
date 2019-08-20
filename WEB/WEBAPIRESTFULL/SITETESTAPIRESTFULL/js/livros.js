@@ -2,8 +2,7 @@
     /* Ao carregar o documento o mesmo inicia o conteudo desde script*/
     jQuery(document).ready(function(){			
 		
-		jQuery('#bntCancelar').click(function(){		
-			$('#bntCancelar').hide();
+		jQuery('#bntCancelar').click(function(){				
 			
 			$('#Id').val("");
             $('#Registro').val("");
@@ -17,37 +16,7 @@
 		});
 		
 		GetMethod(null);
-	});
-	
-	function GetByID(id){
-        //$('#bntSubmit').hide();
-		//$('#bntSalvar').show();
-		$('#bntCancelar').show();
-		
-        var settings = {
-			"async": true,
-			"crossDomain": true,
-			"url": "http://localhost:59271/Api/Livros/"+id,
-			"method": "GET",
-				"headers": {
-					"Content-Type": "application/json",
-					"Accept": "*/*"
-				}
-			}
-	
-			$.ajax(settings).done(function (response) {
-				$('#Id').val(response.Id);
-				$('#Registro').val(response.Registro);
-                $('#Titulo').val(response.Titulo);	
-                $('#Isbn').val(response.Isbn);	
-                $('#Genero').val(response.Genero);	
-                $('#Editora').val(response.Editora);	
-                $('#Sinopse').val(response.Sinopse);	
-                $('#Observacoes').val(response.Observacoes);	
-				$('#Ativo select').val(response.Ativo);
-			});
-		
-	}	
+	});	
 	    
     function GetMethod(object){
 			var settings = {

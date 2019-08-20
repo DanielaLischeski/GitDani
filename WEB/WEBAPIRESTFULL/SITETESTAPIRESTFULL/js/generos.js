@@ -3,8 +3,7 @@
     jQuery(document).ready(function(){
 		/* Indica que o evento submit do form irá realizar esta ação agora*/				
 		
-		jQuery('#bntCancelar').click(function(){			
-			$('#bntCancelar').hide();
+		jQuery('#bntCancelar').click(function(){				
 			
 			$('#Id').val("");
 			$('#Tipo').val("");
@@ -14,33 +13,7 @@
 		
 		GetMethod(null);
 	});
-	
-	function GetByID(id){
-        //$('#bntSubmit').hide();
-		//$('#bntSalvar').show();
-		$('#bntCancelar').show();
-		
-        var settings = {
-			"async": true,
-			"crossDomain": true,
-			"url": "http://localhost:59271/Api/Generos/"+id,
-			"method": "GET",
-				"headers": {
-					"Content-Type": "application/json",
-					"Accept": "*/*"
-				}
-			}
-	
-			$.ajax(settings).done(function (response) {
-				$('#Id').val(response.Id);
-				$('#Tipo').val(response.Tipo);
-				$('#Descricao').val(response.Descricao);	
-				$('#Ativo select').val(response.Ativo);
-			});
-		
-	}	
-	
-    
+		    
     function GetMethod(object){
 			var settings = {
 				"async": true,

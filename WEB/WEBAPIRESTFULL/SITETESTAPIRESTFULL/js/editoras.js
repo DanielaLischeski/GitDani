@@ -2,8 +2,7 @@
     /* Ao carregar o documento o mesmo inicia o conteudo desde script*/
     jQuery(document).ready(function(){
 				
-		jQuery('#bntCancelar').click(function(){			
-			$('#bntCancelar').hide();
+		jQuery('#bntCancelar').click(function(){					
 			
 			$('#Id').val("");
 			$('#Nome').val("");
@@ -14,31 +13,6 @@
 		GetMethod(null);
 	});
 	
-	function GetByID(id){
-        //$('#bntSubmit').hide();
-		//$('#bntSalvar').show();
-		$('#bntCancelar').show();
-		
-        var settings = {
-			"async": true,
-			"crossDomain": true,
-			"url": "http://localhost:59271/Api/Editoras/"+id,
-			"method": "GET",
-				"headers": {
-					"Content-Type": "application/json",
-					"Accept": "*/*"
-				}
-			}
-	
-			$.ajax(settings).done(function (response) {
-				$('#Id').val(response.Id);
-				$('#Nome').val(response.Nome);
-				$('#Descricao').val(response.Descricao);	
-				$('#Ativo select').val(response.Ativo);
-			});
-		
-	}	
-    
     function GetMethod(object){
 			var settings = {
 				"async": true,

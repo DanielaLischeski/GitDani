@@ -86,6 +86,8 @@
 				$.each(response,function(index,value){					
 					$('input[name="'+ index +'"]').val(value);
 				})
+
+				$('#bntCancelar').show();
 			});
 
 		});

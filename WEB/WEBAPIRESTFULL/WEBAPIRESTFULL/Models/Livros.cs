@@ -35,10 +35,12 @@ namespace WEBAPIRESTFULL.Models
         public string Sinopse { get; set; }
 
         [StringLength(1000)]
-        public string Observacoes { get; set; }                
+        public string Observacoes { get; set; }
 
+        [JsonIgnore]
         public virtual Editoras Editoras { get; set; }
 
+        [JsonIgnore]
         public virtual Generos Generos { get; set; }
 
         [JsonIgnore]
