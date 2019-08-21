@@ -415,13 +415,15 @@
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="Genero">Gênero</label>
-                  <input type="Text" class="form-control" name="Genero" id="Genero" placeholder="Gênero"/>
+                  <select name="Genero" id="Genero" class="form-control select2" style="width: 100%;">
+
+                  </select>
                 </div>            
               </div>
               <div class="col-md-6">
                 <div class="form-group">
-                  <label for="Editora">Editora</label>
-                  <input type="Text" class="form-control" name="Editora" id="Editora" placeholder="Editora"/>
+                  <label for="Editora">Editora</label>                  
+                  <select name="Editora" id="Editora" class="form-control select2" style="width: 100%;"></select>
                 </div>            
               </div>
               <div class="col-md-6">
@@ -440,8 +442,8 @@
             <!-- /.box-body -->
 
             <div class="box-footer">
-              <button type="submit" id="bntSubmit" class="btn btn-primary">Finalizar cadastro</button>			 
-			  <button type="button" id="bntCancelar" class="btn btn-primary">Cancelar cadastro</button>
+              <button type="submit" id="bntSubmit" class="btn btn-primary">Finalizar</button>
+              <button type="button" class="btn btn-primary btn-cancel-form" >Cancelar</button>
             </div>
           </div>
         </form>

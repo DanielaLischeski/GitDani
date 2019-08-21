@@ -1,22 +1,47 @@
-
-    /* Ao carregar o documento o mesmo inicia o conteudo desde script*/
-    jQuery(document).ready(function(){			
+	var generosList;
+	var editorasList;
+    
+	jQuery(document).ready(function(){
+		var settings = {
+			"async": true,
+			"crossDomain": true,
+			"url": "http://localhost:59271/Api/Generos",
+			"method": "GET",
+			"headers": {
+				"Content-Type": "application/json",
+				"Accept": "*/*"
+			  }
+			}
+	
+			$.ajax(settings).done(function (response) {
+				generosList = response;
+	
+				$.each(response,function(index,value){
+					$('#Genero')[0].innerHTML += '<option value=\''+ value.Id +'\'>'+ value.Tipo +'</option>';
+				});
+			});
+	
+			settings = {
+			"async": true,
+			"crossDomain": true,
+			"url": "http://localhost:59271/Api/Editoras",
+			"method": "GET",
+			"headers": {
+				"Content-Type": "application/json",
+				"Accept": "*/*"
+			  }
+			}
 		
-		jQuery('#bntCancelar').click(function(){				
-			
-			$('#Id').val("");
-            $('#Registro').val("");
-            $('#Tiulo').val("");		
-            $('#Isbn').val("");
-            $('#Genero').val("");
-            $('#Editora').val("");
-            $('#Sinopse').val("");
-            $('#Observacoes').val("");			
-			$('#Ativo select').val("true");
-		});
-		
-		GetMethod(null);
-	});	
+			$.ajax(settings).done(function (response) {
+				editorasList = response;
+	
+				$.each(response,function(index,value){
+					$('#Editora')[0].innerHTML += '<option value=\''+ value.Id +'\'>'+ value.Nome +'</option>';
+				});
+			});
+	
+			GetMethod(null);
+	});
 	    
     function GetMethod(object){
 			var settings = {
@@ -31,12 +56,23 @@
 				}
 
 				$.ajax(settings).done(function (response) {
+				
 				  RefreshGrid(response);
 				});
 			
 			return false;
     }
    
+	function translateField(filedValue,listTrasnlate,toValue){
+		var retorno;
+   
+	   $.each(listTrasnlate,function(index,value){
+		   if(value.Id == filedValue)
+		   retorno = value[toValue];
+	   });
+   
+	   return retorno;
+   }
     function RefreshGrid(contentValue){
 	   $('#tDataGrid').empty();
 	   $('#tDataGrid').html(  '<tbody>'
@@ -60,8 +96,8 @@
 						+ '<td>' + value.Registro      + '</td>'
                         + '<td>' + value.Titulo + '</td>'	
                         + '<td>' + value.Isbn + '</td>'
-                        + '<td>' + value.Genero + '</td>'
-                        + '<td>' + value.Editora + '</td>'
+                        + '<td>' + translateField(value.Genero,generosList,'Tipo')  + '</td>'
+                        + '<td>' + translateField(value.Editora,editorasList,'Nome') + '</td>'
                         + '<td>' + value.Sinopse + '</td>'
                         + '<td>' + value.Observacoes + '</td>'					
 						+ '<td>' + value.Ativo     + '</td>'
