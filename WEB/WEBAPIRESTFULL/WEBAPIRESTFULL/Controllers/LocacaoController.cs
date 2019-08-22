@@ -78,7 +78,8 @@ namespace WEBAPIRESTFULL.Controllers
         {
             if (!ModelState.IsValid)
             {
-                if (ModelState.Keys.First().ToString() != "locacao.Id")
+                if (ModelState.Keys.First().ToString() != "locacao.Id" 
+                    || ModelState.Keys.Count() > 1 )
                     return BadRequest(ModelState);
             }
 
