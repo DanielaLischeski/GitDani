@@ -71,12 +71,17 @@ namespace RevisaoWEBApi.Models
 
         private ValidationResult ValidarLogin(object value, string displayField)
         {
-
+            
+            //verificar se o login já existe    
+           
             Usuario user = dB.usuarios.FirstOrDefault(x => x.Login == value.ToString());
-            //verificar se o login já existe           
 
-
-            return new ValidationResult($"O campo {displayField} é inválido");
+                if (user == null)
+                    return ValidationResult.Success;
+                else
+                    return new ValidationResult($"Este campo {displayField} já está cadastrado na nossa base de dados!");
+            
+           
         }
     }
 }

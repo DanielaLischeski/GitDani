@@ -175,6 +175,10 @@
     <Compile Include="Migrations\201908231318341_evisaoTabelaUsuarios.Designer.cs">
       <DependentUpon>201908231318341_evisaoTabelaUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201908232023510_VerificaLogin.cs" />
+    <Compile Include="Migrations\201908232023510_VerificaLogin.Designer.cs">
+      <DependentUpon>201908232023510_VerificaLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ContextDB.cs" />
     <Compile Include="Models\CustomValidFields.cs" />
@@ -273,6 +277,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201908231318341_evisaoTabelaUsuarios.resx">
       <DependentUpon>201908231318341_evisaoTabelaUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908232023510_VerificaLogin.resx">
+      <DependentUpon>201908232023510_VerificaLogin.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
