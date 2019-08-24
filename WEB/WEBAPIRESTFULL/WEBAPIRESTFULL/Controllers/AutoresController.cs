@@ -78,9 +78,8 @@ namespace WEBAPIRESTFULL.Controllers
         {
             if (!ModelState.IsValid)
             {
-                if (ModelState.Keys.First().ToString() != "autores.Id"
-                   || ModelState.Keys.Count() > 1)
-                    return BadRequest(ModelState);
+                if(ModelState.Keys.First().ToString() != "autores.Id")
+                return BadRequest(ModelState);
             }
 
             db.Autores.Add(autores);

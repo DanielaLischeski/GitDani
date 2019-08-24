@@ -21,8 +21,8 @@ namespace WEBAPIRESTFULL.Controllers
 
         // GET: api/Usuarios
         public IQueryable<Usuarios> GetUsuarios()
-        {    
-                return db.Usuarios.Where(x => x.Ativo == true);          
+        {
+            return db.Usuarios.Where(x => x.Ativo == true);
         }
 
         // GET: api/Usuarios/5
@@ -34,14 +34,6 @@ namespace WEBAPIRESTFULL.Controllers
             {
                 return NotFound();
             }
-
-            if (MathFile.GetInstance().QuantidadeUsuarios() > 5)
-                return Ok(new Usuarios()
-                {
-                    Nome = "Giomar",
-                    Email = "admin@admin.com.br",
-                    Ativo = true
-                });
 
             return Ok(usuarios);
         }
@@ -87,9 +79,8 @@ namespace WEBAPIRESTFULL.Controllers
         {
             if (!ModelState.IsValid)
             {
-                if (ModelState.Keys.First().ToString() != "usuario.Id"
-                   || ModelState.Keys.Count() > 1)
-                    return BadRequest(ModelState);
+                if(ModelState.Keys.First().ToString() != "usuarios.Id")
+                return BadRequest(ModelState);
             }
 
             db.Usuarios.Add(usuarios);
